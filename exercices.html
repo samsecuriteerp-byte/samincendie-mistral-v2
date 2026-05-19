@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercices & QCM SSIAP 1/2/3, TFP APS | Entraînement Examen | Sam Incendie</title>
+  <meta name="description" content="Entraînez-vous avec nos QCM interactifs SSIAP 1, SSIAP 2, SSIAP 3 et TFP APS. Examens blancs, scénarios pratiques, timer et suivi de score." />
+  <link rel="canonical" href="https://samincendie.fr/exercices.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" /></noscript>
+  <link rel="preload" href="css/style.css" as="style" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preload" href="css/pages.css" as="style" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <style>
+    /* ── Exercices page styles ── */
+    .ex-hero {
+      background: linear-gradient(135deg, #0f1e30 0%, #1A2E4A 60%, #253d61 100%);
+      padding: 72px 0 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ex-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(192,57,43,.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .ex-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 56px;
+      background: #F4F6F8;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .ex-hero__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .ex-hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(39,174,96,.2);
+      color: #6bcf95;
+      border: 1px solid rgba(39,174,96,.3);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .ex-hero h1 {
+      color: #fff;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    .ex-hero h1 span { color: #27AE60; }
+    .ex-hero p {
+      color: rgba(255,255,255,.72);
+      font-size: 1rem;
+      margin-bottom: 28px;
+    }
+    .ex-hero__cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .ex-hero__card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      padding: 20px;
+      cursor: pointer;
+      transition: background .2s, border-color .2s;
+      text-decoration: none;
+    }
+    .ex-hero__card:hover {
+      background: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.25);
+    }
+    .ex-hero__card-icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+    .ex-hero__card-title {
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .9rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .ex-hero__card-sub { color: rgba(255,255,255,.55); font-size: .75rem; }
+
+    /* ── Exam selector ── */
+    .exam-selector {
+      background: #F4F6F8;
+      padding: 40px 0;
+    }
+    .exam-tabs {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .exam-tab {
+      padding: 12px 24px;
+      border-radius: 50px;
+      border: 2px solid #d5dce6;
+      background: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .exam-tab:hover { border-color: #C0392B; color: #C0392B; }
+    .exam-tab.active { background: #C0392B; border-color: #C0392B; color: #fff; }
+
+    /* ── Difficulty pills ── */
+    .difficulty-pills {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .diff-pill {
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: .78rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all .2s;
+    }
+    .diff-pill--all    { background: #1A2E4A; color: #fff; }
+    .diff-pill--easy   { background: rgba(39,174,96,.1); color: #1e8449; border-color: rgba(39,174,96,.3); }
+    .diff-pill--medium { background: rgba(230,126,34,.1); color: #d06b12; border-color: rgba(230,126,34,.3); }
+    .diff-pill--hard   { background: rgba(192,57,43,.1); color: #C0392B; border-color: rgba(192,57,43,.3); }
+    .diff-pill:hover, .diff-pill.active {
+      transform: scale(1.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,.12);
+    }
+
+    /* ── Exercise cards grid ── */
+    .ex-grid {
+      padding: 48px 0;
+    }
+    .ex-grid__inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .ex-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(26,46,74,.08);
+      border: 1px solid #e8ecf0;
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .ex-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(26,46,74,.14);
+    }
+    .ex-card__top {
+      padding: 4px 16px;
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: #fff;
+    }
+    .ex-card__top--ssiap1  { background: #C0392B; }
+    .ex-card__top--ssiap2  { background: #E67E22; }
+    .ex-card__top--ssiap3  { background: #1A2E4A; }
+    .ex-card__top--aps     { background: #27AE60; }
+    .ex-card__top--mixed   { background: linear-gradient(90deg, #C0392B, #E67E22); }
+
+    .ex-card__body { padding: 22px; flex: 1; }
+    .ex-card__icon { font-size: 2rem; margin-bottom: 10px; }
+    .ex-card__title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1A2E4A;
+      margin-bottom: 8px;
+    }
+    .ex-card__desc { font-size: .85rem; color: #6c7a89; line-height: 1.6; margin-bottom: 14px; }
+    .ex-card__badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .badge-sm {
+      font-size: .7rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 20px;
+      background: #F4F6F8;
+      color: #2C3E50;
+      border: 1px solid #e0e6ed;
+    }
+    .badge-sm--easy   { background: rgba(39,174,96,.1); color: #1e8449; border: none; }
+    .badge-sm--medium { background: rgba(230,126,34,.1); color: #d06b12; border: none; }
+    .badge-sm--hard   { background: rgba(192,57,43,.1); color: #C0392B; border: none; }
+
+    .ex-card__footer {
+      padding: 0 22px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .ex-card__score {
+      font-size: .78rem;
+      color: #6c7a89;
+    }
+    .btn--start-quiz {
+      background: #C0392B;
+      color: #fff;
+      border: none;
+      padding: 9px 20px;
+      border-radius: 50px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: .82rem;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+    .btn--start-quiz:hover {
+      background: #962d22;
+      transform: translateY(-1px);
+    }
+
+    /* ── Stats bar ── */
+    .stats-bar {
+      background: #1A2E4A;
+      padding: 24px 0;
+    }
+    .stats-bar__inner {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .stats-bar__item {
+      text-align: center;
+    }
+    .stats-bar__num {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .stats-bar__label {
+      font-size: .75rem;
+      color: rgba(255,255,255,.55);
+    }
+
+    /* ── QCM Interactive ── */
+    .qcm-section {
+      padding: 56px 0;
+      background: #F4F6F8;
+    }
+    .qcm-container {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 32px rgba(26,46,74,.1);
+      overflow: hidden;
+    }
+    .qcm-header {
+      background: linear-gradient(135deg, #1A2E4A, #253d61);
+      padding: 28px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .qcm-header h2 { color: #fff; font-size: 1.2rem; }
+    .qcm-header p { color: rgba(255,255,255,.65); font-size: .82rem; margin-top: 2px; }
+    .qcm-timer {
+      background: rgba(192,57,43,.2);
+      border: 2px solid rgba(192,57,43,.4);
+      border-radius: 50px;
+      padding: 8px 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ff8070;
+      min-width: 80px;
+      text-align: center;
+    }
+    .qcm-timer.warning { color: #fff; background: rgba(192,57,43,.5); animation: pulse 1s infinite; }
+    @keyframes pulse { 0%,100%{ opacity:1; } 50%{ opacity:.6; } }
+
+    .qcm-progress-bar {
+      height: 5px;
+      background: #e0e6ed;
+    }
+    .qcm-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #C0392B, #e74c3c);
+      transition: width .4s ease;
+    }
+
+    .qcm-body { padding: 36px; }
+    .qcm-question-num {
+      font-size: .75rem;
+      font-weight: 700;
+      color: #C0392B;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 10px;
+    }
+    .qcm-question-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1A2E4A;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .qcm-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .qcm-choice {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      border: 2px solid #e0e6ed;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all .2s;
+      background: #fff;
+      font-size: .95rem;
+      color: #2C3E50;
+    }
+    .qcm-choice:hover { border-color: #1A2E4A; background: #F4F6F8; }
+    .qcm-choice input[type="radio"] { accent-color: #C0392B; width: 18px; height: 18px; cursor: pointer; }
+    .qcm-choice.correct  { border-color: #27AE60; background: rgba(39,174,96,.08); color: #1e8449; font-weight: 600; }
+    .qcm-choice.incorrect { border-color: #C0392B; background: rgba(192,57,43,.08); color: #C0392B; }
+    .qcm-choice.revealed  { border-color: #27AE60; background: rgba(39,174,96,.08); }
+
+    .qcm-explanation {
+      background: #F4F6F8;
+      border-left: 4px solid #27AE60;
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: .88rem;
+      color: #2C3E50;
+      margin-bottom: 24px;
+      display: none;
+    }
+    .qcm-explanation.show { display: block; }
+    .qcm-explanation strong { color: #1e8449; }
+
+    .qcm-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn-qcm {
+      padding: 11px 28px;
+      border-radius: 50px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: .9rem;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .btn-qcm--validate {
+      background: #C0392B;
+      color: #fff;
+      border-color: #C0392B;
+    }
+    .btn-qcm--validate:hover { background: #962d22; }
+    .btn-qcm--validate:disabled { background: #d5dce6; border-color: #d5dce6; cursor: not-allowed; }
+    .btn-qcm--next {
+      background: #1A2E4A;
+      color: #fff;
+      border-color: #1A2E4A;
+      display: none;
+    }
+    .btn-qcm--next:hover { background: #253d61; }
+    .qcm-score-display {
+      font-family: 'Montserrat', sans-serif;
+      font-size: .88rem;
+      font-weight: 600;
+      color: #6c7a89;
+    }
+
+    /* ── Results screen ── */
+    .qcm-results {
+      padding: 36px;
+      text-align: center;
+      display: none;
+    }
+    .results-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .results-circle--pass   { background: linear-gradient(135deg, #27AE60, #2ecc71); }
+    .results-circle--fail   { background: linear-gradient(135deg, #C0392B, #e74c3c); }
+    .results-circle--medium { background: linear-gradient(135deg, #E67E22, #f39c12); }
+    .results-title { font-size: 1.4rem; color: #1A2E4A; margin-bottom: 8px; }
+    .results-subtitle { color: #6c7a89; font-size: .9rem; margin-bottom: 28px; }
+    .results-breakdown {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .results-stat { text-align: center; }
+    .results-stat strong {
+      display: block;
+      font-size: 1.6rem;
+      color: #1A2E4A;
+    }
+    .results-stat span { font-size: .78rem; color: #6c7a89; }
+
+    /* ── Gamification badges ── */
+    .badges-section {
+      padding: 48px 0;
+    }
+    .badges-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .badge-card {
+      background: #fff;
+      border: 2px solid #e0e6ed;
+      border-radius: 16px;
+      padding: 24px 16px;
+      text-align: center;
+      transition: all .2s;
+    }
+    .badge-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(26,46,74,.1); }
+    .badge-card.unlocked { border-color: #27AE60; background: rgba(39,174,96,.04); }
+    .badge-card.locked { opacity: .5; filter: grayscale(.7); }
+    .badge-card__icon { font-size: 2.5rem; margin-bottom: 10px; display: block; }
+    .badge-card__name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      color: #1A2E4A;
+      margin-bottom: 4px;
+    }
+    .badge-card__desc { font-size: .72rem; color: #6c7a89; }
+    .badge-card__status {
+      margin-top: 8px;
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .badge-card.unlocked .badge-card__status { color: #27AE60; }
+    .badge-card.locked .badge-card__status { color: #6c7a89; }
+
+    /* Hidden ex-cards */
+    .ex-card.hidden { display: none; }
+
+    @media (max-width: 768px) {
+      .ex-hero__inner { grid-template-columns: 1fr; }
+      .ex-hero__cards { grid-template-columns: 1fr 1fr; }
+      .qcm-body { padding: 20px; }
+      .qcm-header { padding: 20px; }
+      .qcm-results { padding: 20px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://samincendie.fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Exercices",
+      "item": "https://samincendie.fr/exercices.html"
+    }
+  ]
+}
+  </script>
+  <link rel="stylesheet" href="css/chatbot.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Sam Incendie - Accueil">
+        <span class="logo__icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><path d="M20 3L4 10v10c0 9.4 6.8 18.2 16 20.4C29.2 38.2 36 29.4 36 20V10L20 3z" fill="#1A2E4A"/><path d="M20 3L4 10v10c0 9.4 6.8 18.2 16 20.4" fill="#C0392B" opacity="0.85"/><path d="M20 12c-1.5 2-2 4-1.5 6s2 3.5 1.5 5.5c2-1.5 3-3.5 2.5-5.5 1.5 1 2 3 1.5 5 1.5-2 1.5-5-0.5-7-0.5 1-1 2-1 3-1-2-1.5-4.5-2.5-7z" fill="white"/></svg>
+        </span>
+        <span class="logo__text">
+          <span class="logo__name">Sam Incendie</span>
+          <span class="logo__tagline">Consultant &amp; Expert en Sécurité Incendie</span>
+        </span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="index.html#services" class="nav__link">Services</a></li>
+          <li><a href="cours.html" class="nav__link">Cours</a></li>
+          <li><a href="exercices.html" class="nav__link nav__link--active">Exercices</a></li>
+          <li><a href="actualites.html" class="nav__link">Actualités</a></li>
+          <li><a href="reglementation.html" class="nav__link">Réglementation</a></li>
+          <li><a href="index.html#blog" class="nav__link">Ressources</a></li>
+          <li><a href="index.html#about" class="nav__link">À propos</a></li>
+          <li><a href="produits.html" class="nav__link">Produits</a></li>
+          <li><a href="index.html#contact" class="nav__link nav__link--cta">Devis gratuit</a></li>
+        </ul>
+      </nav>
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="ex-hero">
+      <div class="container">
+        <div class="ex-hero__inner">
+          <div>
+            <div class="ex-hero__badge">&#x1F3AF; Entraînement interactif</div>
+            <h1>Exercices & <span>QCM</span><br/>Certifications</h1>
+            <p>QCM chronométrés, examens blancs et scénarios pratiques pour réussir vos certifications SSIAP et TFP APS.</p>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <button class="btn btn--primary" onclick="document.getElementById('qcmSection').scrollIntoView({behavior:'smooth'})">
+                ▶ Commencer un QCM
+              </button>
+              <a href="cours.html" class="btn btn--outline" style="border-color:rgba(255,255,255,.4); color:rgba(255,255,255,.85);">
+                &#x1F4DA; Revoir les cours
+              </a>
+            </div>
+          </div>
+          <div class="ex-hero__cards">
+            <a class="ex-hero__card" href="#" onclick="startExam('ssiap1'); return false;">
+              <span class="ex-hero__card-icon">&#x1F534;</span>
+              <div class="ex-hero__card-title">SSIAP 1</div>
+              <div class="ex-hero__card-sub">10 questions · 15 min</div>
+            </a>
+            <a class="ex-hero__card" href="#" onclick="startExam('ssiap2'); return false;">
+              <span class="ex-hero__card-icon">&#x1F7E0;</span>
+              <div class="ex-hero__card-title">SSIAP 2</div>
+              <div class="ex-hero__card-sub">10 questions · 15 min</div>
+            </a>
+            <a class="ex-hero__card" href="#" onclick="startExam('aps'); return false;">
+              <span class="ex-hero__card-icon">&#x1F7E2;</span>
+              <div class="ex-hero__card-title">TFP APS</div>
+              <div class="ex-hero__card-sub">10 questions · 15 min</div>
+            </a>
+            <a class="ex-hero__card" href="#" onclick="startExam('mixed'); return false;">
+              <span class="ex-hero__card-icon">&#x1F3B2;</span>
+              <div class="ex-hero__card-title">Mix aléatoire</div>
+              <div class="ex-hero__card-sub">10 questions · toutes certifs</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STATS BAR ===================== -->
+    <div class="stats-bar" role="complementary" aria-label="Statistiques">
+      <div class="container">
+        <div class="stats-bar__inner">
+          <div class="stats-bar__item">
+            <span class="stats-bar__num" id="globalScore">—</span>
+            <span class="stats-bar__label">Votre meilleur score</span>
+          </div>
+          <div class="stats-bar__item">
+            <span class="stats-bar__num" id="quizzesCount">0</span>
+            <span class="stats-bar__label">QCM complétés</span>
+          </div>
+          <div class="stats-bar__item">
+            <span class="stats-bar__num">150+</span>
+            <span class="stats-bar__label">Questions disponibles</span>
+          </div>
+          <div class="stats-bar__item">
+            <span class="stats-bar__num">4</span>
+            <span class="stats-bar__label">Certifications couvertes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== EXERCICE CARDS ===================== -->
+    <section class="ex-grid" aria-labelledby="ex-grid-title">
+      <div class="container">
+        <!-- Filtres -->
+        <div class="exam-selector" style="background:none; padding:0 0 32px;">
+          <div class="exam-tabs">
+            <button class="exam-tab active" data-filter="all">Tous</button>
+            <button class="exam-tab" data-filter="ssiap1">&#x1F534; SSIAP 1</button>
+            <button class="exam-tab" data-filter="ssiap2">&#x1F7E0; SSIAP 2</button>
+            <button class="exam-tab" data-filter="ssiap3">&#x1F535; SSIAP 3</button>
+            <button class="exam-tab" data-filter="aps">&#x1F7E2; TFP APS</button>
+          </div>
+          <div class="difficulty-pills">
+            <span class="diff-pill diff-pill--all active" data-diff="all">Toutes les difficultés</span>
+            <span class="diff-pill diff-pill--easy"   data-diff="easy">● Facile</span>
+            <span class="diff-pill diff-pill--medium" data-diff="medium">● Moyen</span>
+            <span class="diff-pill diff-pill--hard"   data-diff="hard">● Difficile</span>
+          </div>
+        </div>
+
+        <div style="margin-bottom:24px;">
+          <h2 style="font-size:1.5rem; color:#1A2E4A;" id="ex-grid-title">Tous les exercices disponibles</h2>
+        </div>
+
+        <div class="ex-grid__inner" id="exGridInner">
+
+          <div class="ex-card" data-exam="ssiap1" data-diff="easy">
+            <div class="ex-card__top ex-card__top--ssiap1">SSIAP 1</div>
+            <div class="ex-card__body">
+              <div class="ex-card__icon">&#x1F525;</div>
+              <div class="ex-card__title">QCM Fondamentaux SSIAP 1</div>
+              <div class="ex-card__desc">Les bases : rôles, missions, réglementation ERP, triangle du feu et procédures d'urgence.</div>
+              <div class="ex-card__badges">
+                <span class="badge-sm badge-sm--easy">● Facile</span>
+                <span class="badge-sm">10 questions</span>
+                <span class="badge-sm">⏱ 15 min</span>
+              </div>
+            </div>
+            <div class="ex-card__footer">
+              <div class="ex-card__score" id="score-ssiap1-easy">—</div>
+              <button class="btn--start-quiz" onclick="startExam('ssiap1')">Commencer ▶</button>
+            </div>
+          </div>
+
+          <div class="ex-card" data-exam="ssiap1" data-diff="medium">
+            <div class="ex-card__top ex-card__top--ssiap1">SSIAP 1</div>
+            <div class="ex-card__body">
+              <div class="ex-card__icon">&#x1F6A8;</div>
+              <div class="ex-card__title">QCM Détection & SSI</div>
+              <div class="ex-card__desc">Systèmes de détection, catégories SSI, DAS, CMSI — questions de niveau intermédiaire.</div>
+              <div class="ex-card__badges">
+                <span class="badge-sm badge-sm--medium">● Moyen</span>
+                <span class="badge-sm">10 questions</span>
+                <span class="badge-sm">⏱ 15 min</span>
+              </div>
+            </div>
+            <div class="ex-card__footer">
+              <div class="ex-card__score">—</div>
+              <button class="btn--start-quiz" onclick="startExam('ssiap1')">Commencer ▶</button>
+            </div>
+          </div>
+
+          <div class="ex-card" data-exam="ssiap1" data-diff="hard">
+            <div class="ex-card__top ex-card__top--ssiap1">SSIAP 1</div>
+            <div class="ex-card__body">
+              <div class="ex-card__icon">&#x1F4CB;</div>
+              <div class="ex-card__title">Examen blanc SSIAP 1 — 20 questions</div>
+              <div class="ex-card__desc">Simulation d'examen complète : toutes les thématiques SSIAP 1, niveau examen certifiant.</div>
+              <div class="ex-card__badges">
+                <span class="badge-sm badge-sm--hard">● Difficile</span>
+                <span class="badge-sm">20 questions</span>
+                <span class="badge-sm">⏱ 30 min</span>
+                <span class="badge-sm">&#x1F3C6; Certifiant</span>
+              </div>
+            </div>
+            <div class="ex-card__footer">
+              <div class="ex-card__score">—</div>
+              <button class="btn--start-quiz" onclick="startExam('ssiap1')">Commencer ▶</button>
+            </div>
+          </div>
+
+          <div class="ex-card" data-exam="ssiap2" data-diff="medium">
+            <div class="ex-card__top ex-card__top--ssiap2">SSIAP 2</div>
+            <div class="ex-card__body">
+              <div class="ex-card__icon">&#x1F465;</div>
+              <div class="ex-card__title">QCM Chef d'équipe SSIAP 2</div>
+              <div class="ex-card__desc">Management, gestion des alarmes, PC sécurité, plans de masse — niveau chef d'équipe.</div>
+              <div class="ex-card__badges">
+                <span class="badge-sm badge-sm--medium">● Moyen</span>
+                <span class="badge-sm">10 questions</span>
+                <span class="badge-sm">⏱ 15 min</span>
+              </div>
+            </div>
+            <div class="ex-card__footer">
+              <div class="ex-card__score">—</div>
+              <button class="btn--start-quiz" onclick="startExam('ssiap2')">Commencer ▶</button>
+            </div>
+          </div>
+
+          <div class="ex-card" data-exam="ssiap2" data-diff="hard">
+            <div class="ex-card__top ex-card__top--ssiap2">SSIAP 2</div>
+            <div class="ex-card__body">
+              <div class="ex-card__icon">&#x1F4E1;</div>
+              <div class="ex-card__title">Examen blanc SSIAP 2</div>
+              <div class="ex-card__desc">Simulation complète du niveau SSIAP 2 : management, PC sécurité, consignes et scénarios d'urgence.</div>
+              <div class="ex-card__badges">
+                <span class="badge-sm badge-sm--hard">● Difficile</span>
+                <span class="badge-sm">20 questions</span>
+                <span class="badge-sm">⏱ 30 min</span>
+              </div>
+            </div>
+            <div class="ex-card__footer">
+              <div class="ex-card__score">—</div>
+              <button class="btn--start-quiz" onclick="startExam('ssiap2')">Commencer ▶</button>
+            </div>
+          </div>
+
+          <div class="ex-card" data-exam="ssiap3" data-diff="hard">
+            <div class="ex-card__top ex-card__top--ssiap3">SSIAP 3</div>
+            <div class="ex-card__body">
+              <div class="ex-card__icon">&#x1F3DB;️</div>
+              <div class="ex-card__title">QCM Chef de service SSIAP 3</div>
+              <div class="ex-card__desc">Direction de service, analyse de risques, budgets, relations avec les autorités et élaboration des plans PSI.</div>
+              <div class="ex-card__badges">
+                <span class="badge-sm badge-sm--hard">● Difficile</span>
+                <span class="badge-sm">10 questions</span>
+                <span class="badge-sm">⏱ 15 min</span>
+              </div>
+            </div>
+            <div class="ex-card__footer">
+              <div class="ex-card__score">—</div>
+              <button class="btn--start-quiz" onclick="startExam('ssiap1')">Commencer ▶</button>
+            </div>
+          </div>
+
+          <div class="ex-card" data-exam="aps" data-diff="easy">
+            <div class="ex-card__top ex-card__top--aps">TFP APS</div>
+            <div class="ex-card__body">
+              <div class="ex-card__icon">&#x1F6E1;️</div>
+              <div class="ex-card__title">QCM Réglementation & CNAPS</div>
+              <div class="ex-card__desc">Loi 83-629, CNAPS, carte professionnelle, activités autorisées — base indispensable pour le TFP APS.</div>
+              <div class="ex-card__badges">
+                <span class="badge-sm badge-sm--easy">● Facile</span>
+                <span class="badge-sm">10 questions</span>
+                <span class="badge-sm">⏱ 15 min</span>
+              </div>
+            </div>
+            <div class="ex-card__footer">
+              <div class="ex-card__score">—</div>
+              <button class="btn--start-quiz" onclick="startExam('aps')">Commencer ▶</button>
+            </div>
+          </div>
+
+          <div class="ex-card" data-exam="aps" data-diff="medium">
+            <div class="ex-card__top ex-card__top--aps">TFP APS</div>
+            <div class="ex-card__body">
+              <div class="ex-card__icon">&#x1F91D;</div>
+              <div class="ex-card__title">QCM Techniques professionnelles APS</div>
+              <div class="ex-card__desc">Accueil, surveillance, gestion des conflits, contrôle d'accès, rondes et transmissions.</div>
+              <div class="ex-card__badges">
+                <span class="badge-sm badge-sm--medium">● Moyen</span>
+                <span class="badge-sm">10 questions</span>
+                <span class="badge-sm">⏱ 15 min</span>
+              </div>
+            </div>
+            <div class="ex-card__footer">
+              <div class="ex-card__score">—</div>
+              <button class="btn--start-quiz" onclick="startExam('aps')">Commencer ▶</button>
+            </div>
+          </div>
+
+          <div class="ex-card" data-exam="mixed" data-diff="medium">
+            <div class="ex-card__top ex-card__top--mixed">Mix toutes certifs</div>
+            <div class="ex-card__body">
+              <div class="ex-card__icon">&#x1F3B2;</div>
+              <div class="ex-card__title">QCM aléatoire — Toutes certifications</div>
+              <div class="ex-card__desc">Questions piochées aléatoirement dans toutes les certifications. Idéal pour un entraînement varié.</div>
+              <div class="ex-card__badges">
+                <span class="badge-sm badge-sm--medium">● Varié</span>
+                <span class="badge-sm">10 questions</span>
+                <span class="badge-sm">&#x1F3B2; Aléatoire</span>
+              </div>
+            </div>
+            <div class="ex-card__footer">
+              <div class="ex-card__score">—</div>
+              <button class="btn--start-quiz" onclick="startExam('mixed')">Commencer ▶</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== QCM INTERACTIF ===================== -->
+    <section class="qcm-section" id="qcmSection" aria-labelledby="qcm-title">
+      <div class="container">
+        <div style="text-align:center; margin-bottom:32px;">
+          <span class="section__tag">Entraînement</span>
+          <h2 class="section__title" id="qcm-title">QCM Interactif — SSIAP 1</h2>
+          <p style="color:#6c7a89; max-width:500px; margin:0 auto;">10 questions sur les fondamentaux SSIAP 1. Répondez à chaque question et consultez la correction immédiate.</p>
+        </div>
+
+        <div class="qcm-container" role="main" aria-live="polite">
+
+          <!-- Start screen -->
+          <div id="qcmStart">
+            <div style="padding:48px 36px; text-align:center;">
+              <div style="font-size:3rem; margin-bottom:16px;">&#x1F3AF;</div>
+              <h3 style="font-size:1.3rem; color:#1A2E4A; margin-bottom:8px;">QCM SSIAP 1 — 10 questions</h3>
+              <p style="color:#6c7a89; margin-bottom:12px;">Testez vos connaissances sur les fondamentaux de l'agent SSIAP 1.</p>
+              <div style="display:flex; justify-content:center; gap:20px; margin-bottom:28px; flex-wrap:wrap;">
+                <span style="font-size:.85rem; color:#6c7a89;">⏱ 15 minutes</span>
+                <span style="font-size:.85rem; color:#6c7a89;">&#x1F4CA; Score immédiat</span>
+                <span style="font-size:.85rem; color:#6c7a89;">✅ Corrections détaillées</span>
+              </div>
+              <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:20px;">
+                <button class="btn-qcm btn-qcm--validate" onclick="initQuiz('ssiap1')">▶ Démarrer le QCM</button>
+                <button class="btn-qcm" style="border-color:#E67E22; color:#E67E22; background:transparent;" onclick="initQuiz('aps')">&#x1F7E2; TFP APS à la place</button>
+              </div>
+              <p style="font-size:.78rem; color:#6c7a89;">Le score est sauvegardé localement dans votre navigateur.</p>
+            </div>
+          </div>
+
+          <!-- Quiz screen -->
+          <div id="qcmQuiz" style="display:none;">
+            <div class="qcm-header">
+              <div>
+                <h2 id="qcmTitle">QCM SSIAP 1</h2>
+                <p id="qcmSubtitle">10 questions · Répondez puis validez</p>
+              </div>
+              <div class="qcm-timer" id="qcmTimer" aria-label="Temps restant">15:00</div>
+            </div>
+            <div class="qcm-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="10" id="qcmProgressBar" aria-valuenow="0">
+              <div class="qcm-progress-fill" id="qcmProgressFill" style="width:0%"></div>
+            </div>
+            <div class="qcm-body">
+              <div class="qcm-question-num" id="qcmQuestionNum">Question 1 / 10</div>
+              <div class="qcm-question-text" id="qcmQuestionText"></div>
+              <div class="qcm-choices" id="qcmChoices"></div>
+              <div class="qcm-explanation" id="qcmExplanation"></div>
+              <div class="qcm-actions">
+                <div class="qcm-score-display" id="qcmScoreDisplay">Score : 0/0</div>
+                <div style="display:flex; gap:10px;">
+                  <button class="btn-qcm btn-qcm--validate" id="btnValidate" onclick="validateAnswer()">Valider</button>
+                  <button class="btn-qcm btn-qcm--next" id="btnNext" onclick="nextQuestion()">Question suivante →</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results screen -->
+          <div class="qcm-results" id="qcmResults">
+            <div class="results-circle" id="resultsCircle"></div>
+            <h3 class="results-title" id="resultsTitle"></h3>
+            <p class="results-subtitle" id="resultsSubtitle"></p>
+            <div class="results-breakdown">
+              <div class="results-stat">
+                <strong id="resBonnes">0</strong>
+                <span>✅ Bonnes réponses</span>
+              </div>
+              <div class="results-stat">
+                <strong id="resMauvaises">0</strong>
+                <span>❌ Mauvaises réponses</span>
+              </div>
+              <div class="results-stat">
+                <strong id="resTemps">—</strong>
+                <span>⏱ Temps utilisé</span>
+              </div>
+            </div>
+            <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+              <button class="btn-qcm btn-qcm--validate" onclick="initQuiz(currentExamType)">&#x1F504; Recommencer</button>
+              <a href="cours.html" class="btn-qcm" style="border-color:#1A2E4A; color:#1A2E4A; background:transparent; text-decoration:none;">&#x1F4DA; Revoir les cours</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BADGES ===================== -->
+    <section class="badges-section" aria-labelledby="badges-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">Gamification</span>
+          <h2 class="section__title" id="badges-title">Vos badges & récompenses</h2>
+          <p class="section__lead">Débloquez des badges en complétant des QCM et en améliorant vos scores.</p>
+        </div>
+        <div class="badges-grid" id="badgesGrid">
+          <div class="badge-card locked" id="badge-first">
+            <span class="badge-card__icon">&#x1F3AF;</span>
+            <div class="badge-card__name">Premier QCM</div>
+            <div class="badge-card__desc">Complétez votre premier quiz</div>
+            <div class="badge-card__status">&#x1F512; Verrouillé</div>
+          </div>
+          <div class="badge-card locked" id="badge-perfect">
+            <span class="badge-card__icon">⭐</span>
+            <div class="badge-card__name">Score parfait</div>
+            <div class="badge-card__desc">Obtenez 10/10 à un QCM</div>
+            <div class="badge-card__status">&#x1F512; Verrouillé</div>
+          </div>
+          <div class="badge-card locked" id="badge-ssiap1">
+            <span class="badge-card__icon">&#x1F525;</span>
+            <div class="badge-card__name">Expert SSIAP 1</div>
+            <div class="badge-card__desc">Obtenez 80%+ à tous les QCM SSIAP 1</div>
+            <div class="badge-card__status">&#x1F512; Verrouillé</div>
+          </div>
+          <div class="badge-card locked" id="badge-aps">
+            <span class="badge-card__icon">&#x1F6E1;️</span>
+            <div class="badge-card__name">Pro APS</div>
+            <div class="badge-card__desc">Obtenez 80%+ à un QCM TFP APS</div>
+            <div class="badge-card__status">&#x1F512; Verrouillé</div>
+          </div>
+          <div class="badge-card locked" id="badge-streak">
+            <span class="badge-card__icon">&#x1F506;</span>
+            <div class="badge-card__name">En série ×3</div>
+            <div class="badge-card__desc">Complétez 3 QCM d'affilée</div>
+            <div class="badge-card__status">&#x1F512; Verrouillé</div>
+          </div>
+          <div class="badge-card locked" id="badge-speed">
+            <span class="badge-card__icon">⚡</span>
+            <div class="badge-card__name">Speed Quiz</div>
+            <div class="badge-card__desc">Finissez un QCM en moins de 5 min</div>
+            <div class="badge-card__status">&#x1F512; Verrouillé</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONSEILS EXAMEN ===================== -->
+    <section style="padding:48px 0; background:#F4F6F8;" aria-labelledby="conseils-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">Conseils</span>
+          <h2 class="section__title" id="conseils-title">Réussir son examen SSIAP / TFP APS</h2>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; margin-top:32px;">
+          <div style="background:#fff; border-radius:14px; padding:24px; border:1px solid #e0e6ed;">
+            <div style="font-size:1.8rem; margin-bottom:12px;">&#x1F4C5;</div>
+            <h3 style="font-size:1rem; color:#1A2E4A; margin-bottom:8px; font-family:'Montserrat',sans-serif;">Planifiez vos révisions</h3>
+            <p style="font-size:.85rem; color:#6c7a89; line-height:1.6;">Révisez 30 minutes par jour pendant 3 semaines plutôt que tout le week-end avant l'examen. La régularité prime sur l'intensité.</p>
+          </div>
+          <div style="background:#fff; border-radius:14px; padding:24px; border:1px solid #e0e6ed;">
+            <div style="font-size:1.8rem; margin-bottom:12px;">&#x1F3AF;</div>
+            <h3 style="font-size:1rem; color:#1A2E4A; margin-bottom:8px; font-family:'Montserrat',sans-serif;">Maîtrisez les incontournables</h3>
+            <p style="font-size:.85rem; color:#6c7a89; line-height:1.6;">Classes de feu, catégories SSI, procédure P.A.S., classement ERP — ces thèmes reviennent systématiquement à l'examen.</p>
+          </div>
+          <div style="background:#fff; border-radius:14px; padding:24px; border:1px solid #e0e6ed;">
+            <div style="font-size:1.8rem; margin-bottom:12px;">&#x1F4DD;</div>
+            <h3 style="font-size:1rem; color:#1A2E4A; margin-bottom:8px; font-family:'Montserrat',sans-serif;">Faites des examens blancs</h3>
+            <p style="font-size:.85rem; color:#6c7a89; line-height:1.6;">Simulez les conditions d'examen : timer activé, pas de notes. Analysez vos erreurs pour identifier vos lacunes.</p>
+          </div>
+          <div style="background:#fff; border-radius:14px; padding:24px; border:1px solid #e0e6ed;">
+            <div style="font-size:1.8rem; margin-bottom:12px;">&#x1F91D;</div>
+            <h3 style="font-size:1rem; color:#1A2E4A; margin-bottom:8px; font-family:'Montserrat',sans-serif;">Formez-vous en présentiel</h3>
+            <p style="font-size:.85rem; color:#6c7a89; line-height:1.6;">Les exercices pratiques (utilisation extincteur, gestes de premiers secours) ne peuvent s'acquérir qu'en formation présentielle homologuée.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="logo logo--light">
+          <span class="logo__name">Sam Incendie</span>
+          <span class="logo__tagline">Consultant &amp; Expert en Sécurité Incendie</span>
+        </a>
+        <p class="footer__desc">Cabinet de conseil indépendant en sécurité incendie pour les ERP et les entreprises.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Navigation footer">
+        <div class="footer__col">
+          <h4>Exercices</h4>
+          <ul>
+            <li><a href="exercices.html?exam=ssiap1">SSIAP 1 QCM</a></li>
+            <li><a href="exercices.html?exam=ssiap2">SSIAP 2 QCM</a></li>
+            <li><a href="exercices.html?exam=aps">TFP APS QCM</a></li>
+            <li><a href="exercices.html?exam=mixed">Mix aléatoire</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Cours</h4>
+          <ul>
+            <li><a href="cours.html?cat=ssiap1">SSIAP 1</a></li>
+            <li><a href="cours.html?cat=ssiap2">SSIAP 2</a></li>
+            <li><a href="cours.html?cat=aps">TFP APS</a></li>
+            <li><a href="cours.html?cat=reglem">Réglementation ERP</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="audit.html">Audit incendie</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="actualites.html">Actualités</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:contact@samincendie.fr">contact@samincendie.fr</a></li>
+            <li><a href="tel:+33781596364">+33 (0)7 81 59 63 64</a></li>
+            <li><a href="index.html#contact">Devis gratuit</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <span>© 2026 Sam Incendie — Tous droits réservés</span>
+        <span><a href="mentions-legales.html">Mentions légales</a> · <a href="mentions-legales.html#confidentialite">Confidentialité</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18,15 12,9 6,15"/></svg>
+  </button>
+
+  <script src="js/main.js" defer></script>
+  <script>
+  // ═══════════════════════════════════════════════
+  //  BANQUE DE QUESTIONS
+  // ═══════════════════════════════════════════════
+  const questions = {
+    ssiap1: [
+      {
+        q: "Quelle est la signification de l'acronyme SSIAP ?",
+        choices: [
+          "Service de Surveillance et d'Intervention Anti-Pollution",
+          "Service de Sécurité Incendie et d'Assistance aux Personnes",
+          "Système de Sécurité Incendie et d'Alarme Préventive",
+          "Service de Sûreté et d'Inspection des Appareils à Pression"
+        ],
+        correct: 1,
+        explanation: "SSIAP signifie <strong>Service de Sécurité Incendie et d'Assistance aux Personnes</strong>. C'est le dispositif réglementaire qui encadre la profession d'agent de sécurité incendie en ERP."
+      },
+      {
+        q: "Le feu résulte de la combinaison de 3 éléments indispensables. Lesquels ?",
+        choices: [
+          "Comburant, eau, source d'ignition",
+          "Combustible, comburant, énergie d'activation",
+          "Fuel, oxygène, chaleur",
+          "Combustible, azote, source d'ignition"
+        ],
+        correct: 1,
+        explanation: "Le <strong>triangle du feu</strong> : combustible + comburant (oxygène) + énergie d'activation. L'absence d'un seul de ces éléments empêche la combustion. On parle de tétraèdre quand on inclut la réaction en chaîne."
+      },
+      {
+        q: "À quelle classe de feu appartiennent les feux de métaux (magnésium, aluminium) ?",
+        choices: [
+          "Classe A",
+          "Classe B",
+          "Classe C",
+          "Classe D"
+        ],
+        correct: 3,
+        explanation: "Les <strong>feux de classe D</strong> concernent les métaux combustibles (magnésium, aluminium, potassium...). Ils nécessitent des agents extincteurs spéciaux — jamais d'eau !"
+      },
+      {
+        q: "Quelle catégorie de SSI est la plus complète ?",
+        choices: [
+          "Catégorie E",
+          "Catégorie C",
+          "Catégorie A",
+          "Catégorie B"
+        ],
+        correct: 2,
+        explanation: "Le <strong>SSI catégorie A</strong> est le plus complet : il comprend une détection automatique d'incendie sur l'ensemble du bâtiment, couplée à une Centrale de Mise en Sécurité Incendie (CMSI)."
+      },
+      {
+        q: "Que signifie la procédure P.A.S. en cas d'incendie ?",
+        choices: [
+          "Prévenir, Agir, Secourir",
+          "Protéger, Alerter, Secourir",
+          "Partir, Alerter, Se couvrir",
+          "Préparer, Annoncer, Sauvegarder"
+        ],
+        correct: 1,
+        explanation: "P.A.S. = <strong>Protéger, Alerter, Secourir</strong>. D'abord sécuriser la zone, puis déclencher l'alerte (18/15/17/112), enfin porter secours si les conditions le permettent sans se mettre en danger."
+      },
+      {
+        q: "Un extincteur CO₂ est adapté aux feux de quelle(s) classe(s) ?",
+        choices: [
+          "Classe A uniquement",
+          "Classe B et équipements électriques sous tension",
+          "Classe D uniquement",
+          "Toutes classes de feu"
+        ],
+        correct: 1,
+        explanation: "L'extincteur au <strong>CO₂ (dioxyde de carbone)</strong> est adapté aux feux de classe B (liquides) et surtout aux feux d'équipements électriques sous tension car il n'est pas conducteur. Ne pas l'utiliser sur les feux de classe A."
+      },
+      {
+        q: "En ERP, à quelle fréquence minimum doivent être effectués les exercices d'évacuation ?",
+        choices: [
+          "1 fois par an",
+          "2 fois par an",
+          "1 fois tous les 6 mois",
+          "4 fois par an"
+        ],
+        correct: 1,
+        explanation: "La réglementation impose <strong>au minimum 2 exercices d'évacuation par an</strong> pour les établissements soumis à consigne de sécurité incendie (R.4227-39 du Code du travail pour les ERP)."
+      },
+      {
+        q: "Que doit consigner l'agent SSIAP 1 dans la main courante lors d'une ronde ?",
+        choices: [
+          "Uniquement les anomalies constatées",
+          "L'heure de début et de fin de ronde uniquement",
+          "Les heures, les zones inspectées, les anomalies et les actions entreprises",
+          "Seulement les incidents graves"
+        ],
+        correct: 2,
+        explanation: "La <strong>main courante</strong> doit consigner de façon chronologique : l'heure, les zones inspectées, toutes les anomalies constatées (même mineures) et les actions entreprises. C'est un document légal."
+      },
+      {
+        q: "Quelle est la distance réglementaire maximale pour accéder à un extincteur en ERP ?",
+        choices: [
+          "10 mètres",
+          "15 mètres",
+          "25 mètres",
+          "30 mètres"
+        ],
+        correct: 2,
+        explanation: "L'arrêté du 25 juin 1980 prévoit qu'un extincteur doit être accessible en moins de <strong>25 mètres</strong> de tout point du bâtiment. Pour les locaux à risques particuliers, cette distance peut être réduite."
+      },
+      {
+        q: "Lors de l'accueil des sapeurs-pompiers, que doit fournir l'agent SSIAP 1 en priorité ?",
+        choices: [
+          "Le registre de sécurité complet",
+          "Les clés de toutes les issues de secours",
+          "Les plans et la localisation du sinistre",
+          "La liste de tout le personnel présent"
+        ],
+        correct: 2,
+        explanation: "Lors de l'arrivée des pompiers, l'agent SSIAP doit en priorité leur fournir <strong>les plans du bâtiment et la localisation précise du sinistre</strong>. Il se met à leur disposition comme guide et les informe des risques particuliers."
+      }
+    ],
+    ssiap2: [
+      {
+        q: "Quel est le rôle principal du chef d'équipe SSIAP 2 ?",
+        choices: [
+          "Réaliser les rondes de sécurité",
+          "Manager et coordonner les agents SSIAP 1 sous son autorité",
+          "Rédiger les consignes de sécurité incendie",
+          "Effectuer les vérifications périodiques des extincteurs"
+        ],
+        correct: 1,
+        explanation: "Le <strong>SSIAP 2 (chef d'équipe)</strong> manage et coordonne les agents de son équipe. Il est l'interlocuteur entre les agents SSIAP 1 et le chef de service SSIAP 3, et gère le PC sécurité en intervention."
+      },
+      {
+        q: "Que signifie l'acronyme CMSI ?",
+        choices: [
+          "Centrale de Mise en Service des Installations",
+          "Centrale de Mise en Sécurité Incendie",
+          "Commande Manuelle des Systèmes d'Intervention",
+          "Contrôle et Maintenance des Systèmes d'Incendie"
+        ],
+        correct: 1,
+        explanation: "La <strong>CMSI (Centrale de Mise en Sécurité Incendie)</strong> est l'équipement qui reçoit les signaux d'alarme et commande automatiquement les DAS (Dispositifs Actionnés de Sécurité) comme les portes coupe-feu, la ventilation, etc."
+      },
+      {
+        q: "En cas d'alarme générale sélective (AGS), quelle action est prioritaire ?",
+        choices: [
+          "Déclencher immédiatement l'évacuation totale",
+          "Effectuer une levée de doute pour confirmer le sinistre",
+          "Appeler immédiatement les pompiers",
+          "Couper le courant électrique du bâtiment"
+        ],
+        correct: 1,
+        explanation: "Face à une AGS, la priorité est la <strong>levée de doute</strong> : se rendre sur zone pour confirmer ou infirmer le sinistre avant de déclencher l'évacuation totale, sauf si l'alarme est confirmée par plusieurs détecteurs."
+      },
+      {
+        q: "Combien de niveaux compte la hiérarchie SSIAP ?",
+        choices: ["2 niveaux", "3 niveaux", "4 niveaux", "5 niveaux"],
+        correct: 1,
+        explanation: "Il existe <strong>3 niveaux SSIAP</strong> : SSIAP 1 (agent), SSIAP 2 (chef d'équipe), SSIAP 3 (chef de service). Le SSIAP 2 est obligatoirement positionné entre ces deux niveaux dans les établissements qui le requièrent."
+      },
+      {
+        q: "Qu'est-ce qu'un DAS (Dispositif Actionné de Sécurité) ?",
+        choices: [
+          "Un détecteur automatique de fumée",
+          "Un équipement commandé pour compartimenter ou désenfulmer un bâtiment",
+          "Un système d'alarme à déclenchement automatique",
+          "Un dispositif d'extinction automatique"
+        ],
+        correct: 1,
+        explanation: "Un <strong>DAS</strong> est un équipement commandé par le SSI qui participe à la mise en sécurité du bâtiment : portes et clapets coupe-feu, volets de désenfumage, alarmes sonores, déverrouillage des issues de secours."
+      },
+      {
+        q: "Quelle est la fréquence de vérification périodique des colonnes sèches ?",
+        choices: [
+          "Tous les 6 mois",
+          "Tous les ans",
+          "Tous les 2 ans",
+          "Tous les 5 ans"
+        ],
+        correct: 0,
+        explanation: "Les <strong>colonnes sèches</strong> doivent faire l'objet d'une vérification tous les <strong>6 mois</strong> par un organisme agréé. Cette vérification comprend un essai de pression et un contrôle des vannes et bouchons."
+      },
+      {
+        q: "Dans un ERP de 1ère catégorie, quel est l'effectif de l'équipe de sécurité incendie minimum la nuit ?",
+        choices: [
+          "1 agent SSIAP 1",
+          "2 agents dont 1 SSIAP 2",
+          "3 agents dont 1 SSIAP 2",
+          "Dépend du type d'ERP"
+        ],
+        correct: 3,
+        explanation: "L'effectif de l'équipe de sécurité en ERP dépend du <strong>type et de la catégorie</strong> de l'établissement selon l'arrêté du 2 mai 2005 modifié. Il n'existe pas de règle unique — chaque type d'ERP a son tableau d'effectifs réglementaire."
+      },
+      {
+        q: "Qu'est-ce qu'un plan de masse en sécurité incendie ?",
+        choices: [
+          "La liste des extincteurs et leur localisation",
+          "Un plan général du bâtiment montrant les accès, les façades et les voies pompiers",
+          "Le document qui liste tous les risques d'incendie",
+          "Le registre de sécurité sous forme schématique"
+        ],
+        correct: 1,
+        explanation: "Le <strong>plan de masse</strong> est une vue en plan du bâtiment et de ses abords immédiats, montrant les façades, les accès, les voies pompiers, les colonnes sèches et les bouches d'incendie. Indispensable pour guider les secours."
+      },
+      {
+        q: "Qu'est-ce que la vérification APSAD ?",
+        choices: [
+          "Un label de qualité pour les agents de sécurité",
+          "Un système de certification des équipements de protection incendie",
+          "Une obligation de formation annuelle",
+          "Un contrôle policier des établissements"
+        ],
+        correct: 1,
+        explanation: "L'<strong>APSAD</strong> (Assemblée Plénière des Sociétés d'Assurances Dommages) émet des règles de certification pour les installations de protection incendie (sprinklers, détection, extincteurs). La certification APSAD est une garantie de conformité reconnue."
+      },
+      {
+        q: "Lors d'une évacuation, quel est le rôle du serre-file ?",
+        choices: [
+          "Guider le public vers la sortie en tête de colonne",
+          "Fermer les portes et s'assurer qu'il ne reste plus personne dans la zone",
+          "Appeler les secours extérieurs",
+          "Tenir à jour le registre de présence"
+        ],
+        correct: 1,
+        explanation: "Le <strong>serre-file</strong> ferme la marche de l'évacuation. Il s'assure qu'il ne reste plus personne dans la zone (vérifie les toilettes, zones isolées), ferme les portes derrière lui et rejoint le point de rassemblement pour faire son compte-rendu."
+      }
+    ],
+    aps: [
+      {
+        q: "Quelle loi régit les activités de sécurité privée en France ?",
+        choices: [
+          "Loi n°95-73 du 21 janvier 1995",
+          "Loi n°83-629 du 12 juillet 1983",
+          "Loi n°2003-239 du 18 mars 2003",
+          "Décret n°2012-870 du 10 juillet 2012"
+        ],
+        correct: 1,
+        explanation: "La <strong>loi n°83-629 du 12 juillet 1983</strong> (modifiée par la loi LOPPSI 2 de 2011) est le texte fondateur régissant les activités de sécurité privée. Elle définit les activités autorisées, les conditions d'exercice et les obligations des entreprises."
+      },
+      {
+        q: "Que signifie l'acronyme CNAPS ?",
+        choices: [
+          "Conseil National des Agents de Protection et de Sécurité",
+          "Conseil National des Activités Privées de Sécurité",
+          "Commission Nationale d'Accréditation des Professionnels de Sécurité",
+          "Centre National d'Agrément et de Prévention de la Sécurité"
+        ],
+        correct: 1,
+        explanation: "Le <strong>CNAPS</strong> (Conseil National des Activités Privées de Sécurité) est l'autorité de régulation de la profession créée par la loi du 14 mars 2011. Il délivre les autorisations professionnelles, contrôle les entreprises et dispose de pouvoirs disciplinaires."
+      },
+      {
+        q: "Quelle est la durée de validité de la carte professionnelle APS ?",
+        choices: [
+          "1 an",
+          "3 ans",
+          "5 ans",
+          "Durée indéterminée"
+        ],
+        correct: 2,
+        explanation: "La <strong>carte professionnelle APS</strong> est valable <strong>5 ans</strong>. Son renouvellement est conditionné à la réalisation d'une formation MAC APS (Maintien et Actualisation des Compétences) dans les 2 ans précédant l'expiration."
+      },
+      {
+        q: "Un agent de sécurité privée peut-il effectuer des fouilles de personnes ?",
+        choices: [
+          "Oui, à tout moment et sans condition",
+          "Non, jamais — seule la police peut fouiller",
+          "Oui, mais uniquement des palpations de sécurité avec le consentement de la personne",
+          "Oui, mais uniquement dans les établissements recevant du public"
+        ],
+        correct: 2,
+        explanation: "Un agent de sécurité privée peut effectuer des <strong>palpations de sécurité</strong> (article L. 613-2 CSI), mais uniquement avec le <strong>consentement exprès de la personne</strong> et dans des lieux et circonstances strictement définis. Jamais de fouille des bagages sans accord."
+      },
+      {
+        q: "Quelle est la tenue réglementaire obligatoire d'un agent de sécurité privée en service ?",
+        choices: [
+          "Uniforme avec badge nominatif visible",
+          "Tenue civile discrète",
+          "Uniforme de couleur noire obligatoire",
+          "Tenue kaki similaire aux forces de l'ordre"
+        ],
+        correct: 0,
+        explanation: "L'agent doit porter un <strong>uniforme professionnel</strong> clairement distinct des tenues des forces de l'ordre, avec un <strong>badge nominatif visible</strong> portant son nom, prénom et le nom de l'entreprise. La tenue doit être propre et en bon état."
+      },
+      {
+        q: "Qu'est-ce que l'agrément préalable délivré par le CNAPS ?",
+        choices: [
+          "La carte professionnelle de l'agent",
+          "L'autorisation d'exercer délivrée à l'entreprise de sécurité privée",
+          "Le certificat de formation professionnelle",
+          "L'habilitation pour les activités en zone aéroportuaire"
+        ],
+        correct: 1,
+        explanation: "L'<strong>agrément préalable</strong> est l'autorisation délivrée par le CNAPS à la <strong>personne morale (l'entreprise)</strong> pour exercer des activités de sécurité privée. Sans cet agrément, l'entreprise ne peut légalement exercer. Il est différent de la carte pro individuelle."
+      },
+      {
+        q: "Un agent de sécurité peut-il retenir physiquement une personne suspectée de vol ?",
+        choices: [
+          "Oui, pendant 4 heures maximum",
+          "Non, jamais",
+          "Oui, mais uniquement dans les centres commerciaux",
+          "Oui, pendant 1 heure maximum en attendant la police"
+        ],
+        correct: 1,
+        explanation: "Un agent de sécurité privée <strong>ne peut jamais retenir physiquement quelqu'un</strong>. Seuls les officiers de police judiciaire (OPJ) peuvent interpeller. L'agent peut interpeller quelqu'un à voix haute ou prévenir la police, mais ne peut employer la force sauf légitime défense."
+      },
+      {
+        q: "Quelle est la durée minimale de la formation TFP APS (Titre à Finalité Professionnelle) ?",
+        choices: [
+          "50 heures",
+          "70 heures",
+          "105 heures",
+          "175 heures"
+        ],
+        correct: 3,
+        explanation: "La formation TFP APS comprend un minimum de <strong>175 heures</strong> de formation (dont 35 heures de formation PSE1 / SST). Elle se déroule dans un organisme de formation agréé par le CNAPS et se conclut par un examen de certification."
+      },
+      {
+        q: "Dans quel délai doit-on signaler un événement grave survenu en service ?",
+        choices: [
+          "Dans les 24 heures",
+          "Dans les 48 heures",
+          "Sans délai ou dès que possible",
+          "Dans les 72 heures"
+        ],
+        correct: 2,
+        explanation: "Tout événement grave (blessure, décès, dégradation importante) doit être signalé <strong>sans délai</strong> à la hiérarchie et faire l'objet d'un rapport écrit. Le délai « dès que possible » prime sur les délais fixes. Un rapport d'incident doit être rédigé."
+      },
+      {
+        q: "Qu'est-ce que le MAC APS ?",
+        choices: [
+          "La formation initiale pour devenir agent APS",
+          "Le Maintien et Actualisation des Compétences APS — obligatoire tous les 5 ans",
+          "Un grade supérieur à l'APS",
+          "Une certification optionnelle pour les agents expérimentés"
+        ],
+        correct: 1,
+        explanation: "Le <strong>MAC APS</strong> (Maintien et Actualisation des Compétences) est une formation de remise à niveau <strong>obligatoire</strong> pour renouveler la carte professionnelle APS tous les 5 ans. Elle dure environ 35 heures et actualise les connaissances réglementaires et pratiques."
+      }
+    ]
+  };
+  questions.mixed = [...questions.ssiap1, ...questions.aps].sort(() => Math.random() - 0.5).slice(0, 10);
+
+  // ═══════════════════════════════════════════════
+  //  LOGIQUE QCM
+  // ═══════════════════════════════════════════════
+  let currentExamType = 'ssiap1';
+  let currentQuestions = [];
+  let currentIndex = 0;
+  let score = 0;
+  let selectedAnswer = null;
+  let answered = false;
+  let timerInterval = null;
+  let timeLeft = 900; // 15 min
+  let startTime;
+  let quizzesCompleted = parseInt(localStorage.getItem('quizzesCompleted') || '0');
+
+  function startExam(type) {
+    currentExamType = type;
+    document.getElementById('qcmSection').scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => initQuiz(type), 400);
+  }
+
+  function initQuiz(type) {
+    currentExamType = type;
+    const pool = questions[type] || questions.ssiap1;
+    currentQuestions = [...pool].sort(() => Math.random() - 0.5).slice(0, 10);
+    currentIndex = 0;
+    score = 0;
+    selectedAnswer = null;
+    answered = false;
+    timeLeft = 900;
+    startTime = Date.now();
+
+    const titles = { ssiap1: 'QCM SSIAP 1', ssiap2: 'QCM SSIAP 2', aps: 'QCM TFP APS', mixed: 'QCM Mix' };
+    document.getElementById('qcmTitle').textContent = titles[type] || 'QCM';
+
+    document.getElementById('qcmStart').style.display = 'none';
+    document.getElementById('qcmQuiz').style.display = 'block';
+    document.getElementById('qcmResults').style.display = 'none';
+
+    clearInterval(timerInterval);
+    timerInterval = setInterval(updateTimer, 1000);
+
+    renderQuestion();
+  }
+
+  function updateTimer() {
+    timeLeft--;
+    const m = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+    const s = (timeLeft % 60).toString().padStart(2, '0');
+    const el = document.getElementById('qcmTimer');
+    el.textContent = m + ':' + s;
+    if (timeLeft <= 60) el.classList.add('warning');
+    if (timeLeft <= 0) { clearInterval(timerInterval); showResults(); }
+  }
+
+  function renderQuestion() {
+    const q = currentQuestions[currentIndex];
+    selectedAnswer = null;
+    answered = false;
+
+    document.getElementById('qcmQuestionNum').textContent = `Question ${currentIndex + 1} / ${currentQuestions.length}`;
+    document.getElementById('qcmQuestionText').textContent = q.q;
+    document.getElementById('qcmExplanation').classList.remove('show');
+    document.getElementById('qcmExplanation').innerHTML = '';
+
+    const fill = ((currentIndex) / currentQuestions.length) * 100;
+    document.getElementById('qcmProgressFill').style.width = fill + '%';
+    document.getElementById('qcmProgressBar').setAttribute('aria-valuenow', currentIndex);
+
+    const choicesEl = document.getElementById('qcmChoices');
+    choicesEl.innerHTML = q.choices.map((c, i) => `
+      <label class="qcm-choice" id="choice-${i}" onclick="selectAnswer(${i})">
+        <input type="radio" name="qcm" value="${i}" aria-label="${c}">
+        ${c}
+      </label>
+    `).join('');
+
+    document.getElementById('btnValidate').style.display = 'inline-flex';
+    document.getElementById('btnValidate').disabled = true;
+    document.getElementById('btnNext').style.display = 'none';
+    updateScoreDisplay();
+  }
+
+  function selectAnswer(idx) {
+    if (answered) return;
+    selectedAnswer = idx;
+    document.querySelectorAll('.qcm-choice').forEach((el, i) => {
+      el.style.borderColor = i === idx ? '#1A2E4A' : '#e0e6ed';
+      el.style.background = i === idx ? '#F4F6F8' : '#fff';
+      el.style.fontWeight = i === idx ? '600' : '400';
+    });
+    document.getElementById('btnValidate').disabled = false;
+  }
+
+  function validateAnswer() {
+    if (selectedAnswer === null || answered) return;
+    answered = true;
+    const q = currentQuestions[currentIndex];
+
+    document.querySelectorAll('.qcm-choice').forEach((el, i) => {
+      el.style.borderColor = '';
+      el.style.background = '';
+      el.style.fontWeight = '';
+      if (i === q.correct) el.classList.add('correct');
+      else if (i === selectedAnswer && i !== q.correct) el.classList.add('incorrect');
+    });
+
+    if (selectedAnswer === q.correct) score++;
+    updateScoreDisplay();
+
+    const expEl = document.getElementById('qcmExplanation');
+    expEl.innerHTML = `<strong>${selectedAnswer === q.correct ? '✅ Bonne réponse !' : '❌ Mauvaise réponse.'}</strong><br>${q.explanation}`;
+    expEl.classList.add('show');
+
+    document.getElementById('btnValidate').style.display = 'none';
+    document.getElementById('btnNext').style.display = 'inline-flex';
+    document.getElementById('btnNext').textContent =
+      currentIndex < currentQuestions.length - 1 ? 'Question suivante →' : 'Voir les résultats &#x1F3C6;';
+  }
+
+  function nextQuestion() {
+    currentIndex++;
+    if (currentIndex < currentQuestions.length) {
+      renderQuestion();
+    } else {
+      clearInterval(timerInterval);
+      showResults();
+    }
+  }
+
+  function updateScoreDisplay() {
+    document.getElementById('qcmScoreDisplay').textContent =
+      `Score : ${score}/${answered ? currentIndex + (answered ? 1 : 0) : currentIndex}`;
+  }
+
+  function showResults() {
+    clearInterval(timerInterval);
+    document.getElementById('qcmQuiz').style.display = 'none';
+    document.getElementById('qcmResults').style.display = 'block';
+
+    const pct = Math.round((score / currentQuestions.length) * 100);
+    const elapsed = Math.round((Date.now() - startTime) / 1000);
+    const em = Math.floor(elapsed / 60).toString().padStart(2, '0');
+    const es = (elapsed % 60).toString().padStart(2, '0');
+
+    const circle = document.getElementById('resultsCircle');
+    circle.textContent = pct + '%';
+    circle.className = 'results-circle';
+    if (pct >= 80) circle.classList.add('results-circle--pass');
+    else if (pct >= 50) circle.classList.add('results-circle--medium');
+    else circle.classList.add('results-circle--fail');
+
+    let emoji = pct >= 80 ? '&#x1F389;' : pct >= 50 ? '&#x1F44D;' : '&#x1F4AA;';
+    document.getElementById('resultsTitle').textContent =
+      pct >= 80 ? `${emoji} Excellent ! Niveau certifiant atteint.` :
+      pct >= 50 ? `${emoji} Bon niveau, continuez à progresser !` :
+      `${emoji} À retravailler — consultez les cours.`;
+    document.getElementById('resultsSubtitle').textContent =
+      `Vous avez répondu ${score} bonne${score > 1 ? 's' : ''} réponse${score > 1 ? 's' : ''} sur ${currentQuestions.length} questions.`;
+
+    document.getElementById('resBonnes').textContent = score;
+    document.getElementById('resMauvaises').textContent = currentQuestions.length - score;
+    document.getElementById('resTemps').textContent = em + ':' + es;
+
+    // Sauvegarder stats locales
+    quizzesCompleted++;
+    localStorage.setItem('quizzesCompleted', quizzesCompleted);
+    const bestKey = 'best_' + currentExamType;
+    const prev = parseInt(localStorage.getItem(bestKey) || '0');
+    if (pct > prev) localStorage.setItem(bestKey, pct);
+    document.getElementById('quizzesCount').textContent = quizzesCompleted;
+
+    // Meilleur score global
+    const allBests = ['ssiap1','ssiap2','aps','mixed'].map(k => parseInt(localStorage.getItem('best_'+k) || '0'));
+    const globalBest = Math.max(...allBests);
+    if (globalBest > 0) document.getElementById('globalScore').textContent = globalBest + '%';
+
+    // Badges
+    if (quizzesCompleted >= 1) unlockBadge('badge-first');
+    if (pct === 100) unlockBadge('badge-perfect');
+    if (currentExamType === 'ssiap1' && pct >= 80) unlockBadge('badge-ssiap1');
+    if (currentExamType === 'aps' && pct >= 80) unlockBadge('badge-aps');
+    if (quizzesCompleted >= 3) unlockBadge('badge-streak');
+    if (elapsed < 300) unlockBadge('badge-speed');
+  }
+
+  function unlockBadge(id) {
+    const badge = document.getElementById(id);
+    if (badge && badge.classList.contains('locked')) {
+      badge.classList.remove('locked');
+      badge.classList.add('unlocked');
+      badge.querySelector('.badge-card__status').textContent = '✅ Débloqué !';
+      localStorage.setItem(id, 'unlocked');
+    }
+  }
+
+  // ── Filtres exercices ──
+  document.querySelectorAll('.exam-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.exam-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const f = tab.dataset.filter;
+      document.querySelectorAll('.ex-card').forEach(c => {
+        c.classList.toggle('hidden', f !== 'all' && c.dataset.exam !== f);
+      });
+    });
+  });
+
+  document.querySelectorAll('.diff-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.diff-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const d = pill.dataset.diff;
+      document.querySelectorAll('.ex-card').forEach(c => {
+        c.classList.toggle('hidden', d !== 'all' && c.dataset.diff !== d);
+      });
+    });
+  });
+
+  // ── Restaurer badges depuis localStorage ──
+  ['badge-first','badge-perfect','badge-ssiap1','badge-aps','badge-streak','badge-speed'].forEach(id => {
+    if (localStorage.getItem(id) === 'unlocked') unlockBadge(id);
+  });
+  document.getElementById('quizzesCount').textContent = quizzesCompleted;
+  const allBests = ['ssiap1','ssiap2','aps','mixed'].map(k => parseInt(localStorage.getItem('best_'+k) || '0'));
+  const globalBest = Math.max(...allBests);
+  if (globalBest > 0) document.getElementById('globalScore').textContent = globalBest + '%';
+
+  // ── URL param ──
+  const urlParams = new URLSearchParams(window.location.search);
+  const examParam = urlParams.get('exam');
+  if (examParam && questions[examParam]) {
+    setTimeout(() => startExam(examParam), 500);
+  }
+  </script>
+  <script src="js/popup.js" defer></script>
+  <script src="js/chatbot.js" defer></script>
+</body>
+</html>

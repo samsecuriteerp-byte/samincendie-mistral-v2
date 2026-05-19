@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secteurs d'intervention – ERP, Industrie, Bureaux, Collectivités | Sam Incendie</title>
+  <meta name="description" content="Sam Incendie intervient dans tous les secteurs : ERP, industrie & ICPE, bureaux, collectivités, santé, enseignement. Expert sécurité incendie certifié. Devis gratuit." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" /></noscript>
+  <link rel="preload" href="css/style.css" as="style" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preload" href="css/pages.css" as="style" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <style>
+    .secteur-detail { scroll-margin-top: 88px; }
+    .secteur-detail + .secteur-detail { border-top: 2px solid var(--grey-light); }
+    .secteur-detail__inner {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .secteur-detail__aside {
+      position: sticky;
+      top: 96px;
+    }
+    .secteur-detail__icon-wrap {
+      width: 72px;
+      height: 72px;
+      background: rgba(192,57,43,.08);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content:center;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+    .secteur-detail__tag {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--red);
+      background: rgba(192,57,43,.08);
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-bottom: 10px;
+    }
+    .secteur-detail__aside h2 { margin-bottom: 8px; }
+    .secteur-detail__aside p { color: var(--grey-mid); font-size: .95rem; }
+    .obligations-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .obligation-card {
+      background: var(--white);
+      border: 2px solid var(--grey-light);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+    }
+    .obligation-card h4 {
+      font-size: .95rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .obligation-card h4 svg { flex-shrink: 0; color: var(--red); }
+    .obligation-card ul { list-style: none; }
+    .obligation-card ul li {
+      padding: 4px 0 4px 18px;
+      position: relative;
+      font-size: .87rem;
+      color: var(--grey-dark);
+      line-height: 1.5;
+    }
+    .obligation-card ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-weight: 700;
+      font-size: .8rem;
+    }
+    .secteur-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 28px 0;
+      border-bottom: 2px solid var(--grey-light);
+      margin-bottom: 0;
+    }
+    .secteur-nav a {
+      font-family: var(--font-head);
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--grey-mid);
+      border: 2px solid var(--grey-light);
+      border-radius: 50px;
+      padding: 7px 18px;
+      text-decoration: none;
+      transition: border-color var(--transition), color var(--transition), background var(--transition);
+    }
+    .secteur-nav a:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+    @media (max-width: 768px) {
+      .secteur-detail__inner { grid-template-columns: 1fr; gap: 32px; }
+      .secteur-detail__aside { position: static; }
+      .obligations-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://samincendie.fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Secteurs d'intervention",
+      "item": "https://samincendie.fr/secteurs.html"
+    }
+  ]
+}
+  </script>
+  <link rel="stylesheet" href="css/chatbot.css" />
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo"><span class="logo__name">Sam Incendie</span><span class="logo__tagline">Consultant &amp; Expert en Sécurité Incendie</span></a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="index.html#services" class="nav__link">Services</a></li>
+          <li><a href="cours.html" class="nav__link">Cours</a></li>
+          <li><a href="exercices.html" class="nav__link">Exercices</a></li>
+          <li><a href="actualites.html" class="nav__link">Actualités</a></li>
+          <li><a href="reglementation.html" class="nav__link">Réglementation</a></li>
+          <li><a href="formations.html" class="nav__link">Formations</a></li>
+          <li><a href="index.html#blog" class="nav__link">Ressources</a></li>
+          <li><a href="produits.html" class="nav__link">Produits</a></li>
+          <li><a href="index.html#contact" class="nav__link nav__link--cta">Devis gratuit</a></li>
+        </ul>
+      </nav>
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a> <span aria-hidden="true">›</span> <span>Secteurs</span>
+        </nav>
+        <h1>Nous intervenons dans tous les secteurs</h1>
+        <p>Chaque type d'établissement a ses propres obligations réglementaires. Retrouvez ci-dessous les obligations spécifiques à votre secteur d'activité.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-bottom:0">
+      <div class="container">
+        <nav class="secteur-nav" aria-label="Accès rapide par secteur">
+          <a href="#erp">ERP</a>
+          <a href="#industrie">Industrie &amp; ICPE</a>
+          <a href="#tertiaire">Bureaux &amp; Tertiaire</a>
+          <a href="#collectivites">Collectivités</a>
+          <a href="#sante">Santé &amp; Social</a>
+          <a href="#enseignement">Enseignement</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ERP -->
+    <section class="section secteur-detail" id="erp">
+      <div class="container">
+        <div class="secteur-detail__inner">
+          <div class="secteur-detail__aside">
+            <div class="secteur-detail__icon-wrap">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+            </div>
+            <span class="secteur-detail__tag">Réglementation spécifique</span>
+            <h2>ERP</h2>
+            <p>Établissements Recevant du Public — Hôtels · Restaurants · Écoles · Commerces · Salles de spectacle · Musées · Cinémas</p>
+            <a href="index.html#contact" class="btn btn--primary" style="margin-top:24px">Demander un audit ERP</a>
+          </div>
+          <div>
+            <p style="color:var(--grey-mid); margin-bottom:28px;">Les ERP sont soumis au <strong>règlement de sécurité ERP</strong> (arrêté du 25 juin 1980 modifié), intégré au Code de la Construction et de l'Habitation. Le classement s'effectue par <strong>type</strong> (J, L, M, N, O, P, R, S, T, U, V, W, X, Y) selon l'activité et par <strong>catégorie</strong> (1 à 5) selon la capacité d'accueil.</p>
+            <div class="obligations-grid">
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Commission de sécurité</h4>
+                <ul>
+                  <li>Visite d'ouverture obligatoire (cat. 1 à 4)</li>
+                  <li>Visites périodiques tous les 2 à 5 ans</li>
+                  <li>Avis favorable requis pour ouverture</li>
+                  <li>Suivi des prescriptions émises</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>Documentation obligatoire</h4>
+                <ul>
+                  <li>Registre de sécurité tenu à jour</li>
+                  <li>Plans d'évacuation affichés</li>
+                  <li>Consignes incendie rédigées</li>
+                  <li>Rapport de vérifications périodiques</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>Formation du personnel</h4>
+                <ul>
+                  <li>Formation incendie de tout le personnel</li>
+                  <li>Désignation d'un responsable sécurité</li>
+                  <li>Exercices d'évacuation (2/an minimum)</li>
+                  <li>Formation des agents SSIAP si requis</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/></svg>Équipements &amp; installations</h4>
+                <ul>
+                  <li>Extincteurs (type et nombre réglementaires)</li>
+                  <li>Système de sécurité incendie (SSI) adapté</li>
+                  <li>Éclairage de sécurité (BAES/BAEH)</li>
+                  <li>Désenfumage selon configuration</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDUSTRIE -->
+    <section class="section secteur-detail" id="industrie" style="background:var(--grey-bg)">
+      <div class="container">
+        <div class="secteur-detail__inner">
+          <div class="secteur-detail__aside">
+            <div class="secteur-detail__icon-wrap">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+            </div>
+            <span class="secteur-detail__tag">Réglementation spécifique</span>
+            <h2>Industrie &amp; ICPE</h2>
+            <p>Usines · Entrepôts · Sites classés · Zones industrielles · Installations soumises à autorisation ou déclaration</p>
+            <a href="index.html#contact" class="btn btn--primary" style="margin-top:24px">Demander un audit industriel</a>
+          </div>
+          <div>
+            <p style="color:var(--grey-mid); margin-bottom:28px;">Les installations industrielles sont soumises à la fois au <strong>Code du travail</strong> (articles R.4227-28 et suivants) et, pour les ICPE, à la <strong>réglementation des installations classées</strong> (Code de l'environnement). Les obligations varient selon le régime : déclaration, enregistrement ou autorisation.</p>
+            <div class="obligations-grid">
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Plan d'opération interne (POI)</h4>
+                <ul>
+                  <li>Obligatoire pour les ICPE à autorisation</li>
+                  <li>Procédures d'alerte et d'évacuation</li>
+                  <li>Moyens d'intervention internes</li>
+                  <li>Exercices de simulation annuels</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>Risques spécifiques</h4>
+                <ul>
+                  <li>Stockage de matières dangereuses (ATEX)</li>
+                  <li>Présence de liquides inflammables</li>
+                  <li>Risques d'explosion et de BLEVE</li>
+                  <li>Sprinklers et systèmes automatiques</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>Formation &amp; habilitations</h4>
+                <ul>
+                  <li>Formation EPI (Code du travail)</li>
+                  <li>Habilitations spécifiques aux risques</li>
+                  <li>Exercices d'évacuation (2/an min.)</li>
+                  <li>Formation des équipes d'intervention</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>Documentation réglementaire</h4>
+                <ul>
+                  <li>Document unique d'évaluation des risques (DUER)</li>
+                  <li>Étude de danger pour ICPE autorisation</li>
+                  <li>Registre de sécurité incendie</li>
+                  <li>Procédures d'urgence affichées</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TERTIAIRE -->
+    <section class="section secteur-detail" id="tertiaire">
+      <div class="container">
+        <div class="secteur-detail__inner">
+          <div class="secteur-detail__aside">
+            <div class="secteur-detail__icon-wrap">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg>
+            </div>
+            <span class="secteur-detail__tag">Réglementation spécifique</span>
+            <h2>Bureaux &amp; Tertiaire</h2>
+            <p>Immeubles de bureaux · Open spaces · Cabinets médicaux · Cliniques privées · Centres d'appel</p>
+            <a href="index.html#contact" class="btn btn--primary" style="margin-top:24px">Demander un audit tertiaire</a>
+          </div>
+          <div>
+            <p style="color:var(--grey-mid); margin-bottom:28px;">Les immeubles de bureaux et bâtiments tertiaires sont soumis principalement au <strong>Code du travail</strong>. Lorsqu'ils reçoivent du public, les obligations ERP s'ajoutent. Les immeubles de grande hauteur (IGH) font l'objet d'une réglementation spécifique renforcée.</p>
+            <div class="obligations-grid">
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>Obligations Code du travail</h4>
+                <ul>
+                  <li>Formation incendie des salariés (R.4227-28)</li>
+                  <li>Désignation d'équipiers de première intervention</li>
+                  <li>Exercices d'évacuation (2/an)</li>
+                  <li>Consignes de sécurité affichées</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/></svg>IGH — obligations renforcées</h4>
+                <ul>
+                  <li>SSI de catégorie A obligatoire</li>
+                  <li>Service de sécurité incendie permanent</li>
+                  <li>Compartimentage renforcé</li>
+                  <li>Visite de contrôle périodique obligatoire</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Vérifications périodiques</h4>
+                <ul>
+                  <li>Contrôle des extincteurs (annuel)</li>
+                  <li>Vérification du SSI (annuelle)</li>
+                  <li>Éclairage de sécurité (mensuel / annuel)</li>
+                  <li>Portes coupe-feu et désenfumage</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>Documentation interne</h4>
+                <ul>
+                  <li>DUER incluant le risque incendie</li>
+                  <li>Plans d'évacuation par niveau</li>
+                  <li>Registre de sécurité</li>
+                  <li>Procédure de gestion de crise</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLECTIVITÉS -->
+    <section class="section secteur-detail" id="collectivites" style="background:var(--grey-bg)">
+      <div class="container">
+        <div class="secteur-detail__inner">
+          <div class="secteur-detail__aside">
+            <div class="secteur-detail__icon-wrap">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3"/><path d="M20.39 19a8 8 0 10-16.78 0"/><path d="M12 11v8"/><path d="M8 17h8"/></svg>
+            </div>
+            <span class="secteur-detail__tag">Réglementation spécifique</span>
+            <h2>Collectivités</h2>
+            <p>Mairies · Gymnases · Médiathèques · Piscines · Équipements culturels et sportifs publics</p>
+            <a href="index.html#contact" class="btn btn--primary" style="margin-top:24px">Demander un audit collectivité</a>
+          </div>
+          <div>
+            <p style="color:var(--grey-mid); margin-bottom:28px;">Les équipements publics sont soumis à la réglementation ERP mais bénéficient parfois de dérogations spécifiques. La responsabilité de l'élu ou du fonctionnaire responsable peut être engagée en cas de sinistre. La gestion des <strong>multi-activités et des différents exploitants</strong> requiert une attention particulière.</p>
+            <div class="obligations-grid">
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Spécificités des ERP publics</h4>
+                <ul>
+                  <li>Application intégrale du règlement ERP</li>
+                  <li>Gestion des multi-exploitants</li>
+                  <li>Contrôle des associations utilisatrices</li>
+                  <li>Plan de prévention pour intervenants</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Responsabilité de l'élu</h4>
+                <ul>
+                  <li>Responsabilité pénale du maire/directeur</li>
+                  <li>Obligation de suivi des prescriptions</li>
+                  <li>Délégation de compétence à formaliser</li>
+                  <li>Contrôle des contrats de maintenance</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>Formation &amp; exercices</h4>
+                <ul>
+                  <li>Formation de tout le personnel communal</li>
+                  <li>Sensibilisation des bénévoles et associations</li>
+                  <li>Exercices d'évacuation réguliers</li>
+                  <li>Fiches réflexes pour les responsables</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>Suivi documentaire</h4>
+                <ul>
+                  <li>Registre de sécurité par équipement</li>
+                  <li>Suivi des rapports de vérification</li>
+                  <li>Délibérations et arrêtés de sécurité</li>
+                  <li>Traçabilité des formations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SANTÉ -->
+    <section class="section secteur-detail" id="sante">
+      <div class="container">
+        <div class="secteur-detail__inner">
+          <div class="secteur-detail__aside">
+            <div class="secteur-detail__icon-wrap">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <span class="secteur-detail__tag">Réglementation renforcée</span>
+            <h2>Santé &amp; Social</h2>
+            <p>EHPAD · Hôpitaux · Cliniques · Établissements de soins · Maisons de retraite (types J &amp; U)</p>
+            <a href="index.html#contact" class="btn btn--primary" style="margin-top:24px">Demander un audit santé</a>
+          </div>
+          <div>
+            <p style="color:var(--grey-mid); margin-bottom:28px;">Les établissements de santé et médico-sociaux (types <strong>J et U</strong>) font l'objet d'une réglementation particulièrement stricte en raison de la présence de personnes à mobilité réduite ou dépendantes. L'évacuation différée et la sectorisation sont des concepts clés de cette réglementation.</p>
+            <div class="obligations-grid">
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Évacuation différée</h4>
+                <ul>
+                  <li>Sectorisation en compartiments coupe-feu</li>
+                  <li>Transfert horizontal des résidents</li>
+                  <li>Capacité d'accueil des compartiments refuges</li>
+                  <li>Protocoles d'évacuation spécifiques</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/></svg>SSI de catégorie A</h4>
+                <ul>
+                  <li>Détection automatique généralisée</li>
+                  <li>Système d'alarme type 1 obligatoire</li>
+                  <li>Désenfumage mécanique des circulations</li>
+                  <li>Maintenance renforcée du SSI</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>Formation spécialisée</h4>
+                <ul>
+                  <li>Formation SSIAP adaptée pour le personnel</li>
+                  <li>Exercices incluant les personnels de nuit</li>
+                  <li>Procédures spécifiques aux soins</li>
+                  <li>Gestion des gaz médicaux en cas d'incendie</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/></svg>Contrôle renforcé</h4>
+                <ul>
+                  <li>Visite de commission obligatoire avant ouverture</li>
+                  <li>Contrôle tous les 3 ans (type J et U)</li>
+                  <li>Rapport annuel au Préfet</li>
+                  <li>Suivi des prescriptions sous délai</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENSEIGNEMENT -->
+    <section class="section secteur-detail" id="enseignement" style="background:var(--grey-bg)">
+      <div class="container">
+        <div class="secteur-detail__inner">
+          <div class="secteur-detail__aside">
+            <div class="secteur-detail__icon-wrap">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+            </div>
+            <span class="secteur-detail__tag">Réglementation spécifique</span>
+            <h2>Enseignement</h2>
+            <p>Écoles maternelles · Collèges · Lycées · Universités · Centres de formation (type R)</p>
+            <a href="index.html#contact" class="btn btn--primary" style="margin-top:24px">Demander un audit établissement scolaire</a>
+          </div>
+          <div>
+            <p style="color:var(--grey-mid); margin-bottom:28px;">Les établissements d'enseignement sont classés en <strong>type R</strong> du règlement ERP. La présence d'enfants et de personnes mineures impose des exigences renforcées en matière d'évacuation rapide et de formation du personnel. Le chef d'établissement en est le responsable légal.</p>
+            <div class="obligations-grid">
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Exercices d'évacuation</h4>
+                <ul>
+                  <li>3 exercices/an pour les écoles (dont 1 en période nocturne pour l'internat)</li>
+                  <li>2 exercices/an pour les autres établissements</li>
+                  <li>Compte-rendu au registre de sécurité</li>
+                  <li>Intégration des élèves à la procédure</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>Formation des personnels</h4>
+                <ul>
+                  <li>Formation incendie de tout le personnel</li>
+                  <li>Désignation d'un responsable sécurité</li>
+                  <li>Sensibilisation des élèves aux consignes</li>
+                  <li>Formation des surveillants d'internat</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/></svg>Commissions de sécurité</h4>
+                <ul>
+                  <li>Visite avant toute ouverture au public</li>
+                  <li>Périodicité de 5 ans (cat. 1 à 3)</li>
+                  <li>Suivi des prescriptions émises</li>
+                  <li>Contrôle des travaux de mise en conformité</li>
+                </ul>
+              </div>
+              <div class="obligation-card">
+                <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>Documentation</h4>
+                <ul>
+                  <li>Registre de sécurité tenu par le chef d'établissement</li>
+                  <li>Plans d'évacuation affichés dans chaque salle</li>
+                  <li>Consignes incendie adaptées aux élèves</li>
+                  <li>Rapports de vérification périodique</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container" style="text-align:center; max-width:640px">
+        <span class="section__tag">Votre secteur, nos solutions</span>
+        <h2 class="section__title">Un accompagnement adapté à votre activité</h2>
+        <p class="section__lead">Quelle que soit la nature de votre établissement, nous disposons de l'expertise réglementaire pour vous accompagner dans votre mise en conformité.</p>
+        <a href="index.html#contact" class="btn btn--primary btn--lg">Demander un devis gratuit</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__bottom" style="border-top:1px solid rgba(255,255,255,.1)">
+      <div class="container">
+        <span>© 2026 Sam Incendie — Tous droits réservés</span>
+        <span><a href="mentions-legales.html">Mentions légales</a> · <a href="index.html">Accueil</a></span>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18,15 12,9 6,15"/></svg>
+  </button>
+  <script src="js/main.js" defer></script>
+  <script src="js/popup.js" defer></script>
+  <script src="js/chatbot.js" defer></script>
+</body>
+</html>

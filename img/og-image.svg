@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A2E4A"/>
+      <stop offset="60%" style="stop-color:#1d3453"/>
+      <stop offset="100%" style="stop-color:#8b2020"/>
+    </linearGradient>
+    <linearGradient id="flameG" x1="20%" y1="100%" x2="80%" y2="0%">
+      <stop offset="0%" style="stop-color:#C0392B"/>
+      <stop offset="55%" style="stop-color:#e74c3c"/>
+      <stop offset="100%" style="stop-color:#f5a623"/>
+    </linearGradient>
+    <linearGradient id="shieldStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.6)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.1)"/>
+    </linearGradient>
+    <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="rgba(255,255,255,0.05)"/>
+    </pattern>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Diagonal accent shape -->
+  <polygon points="750,0 1200,0 1200,630 900,630" fill="rgba(192,57,43,0.12)"/>
+
+  <!-- Large watermark shield (background) -->
+  <g transform="translate(340, -60) scale(9)" opacity="0.04">
+    <path d="M40 5L8 18v20c0 18.7 13.6 36.2 31.8 40.7C58.2 79.2 72 61.7 72 41V18L40 5z" fill="white"/>
+  </g>
+
+  <!-- Main shield (left, visible) -->
+  <g transform="translate(95, 155) scale(5.2)">
+    <path d="M40 5L8 18v20c0 18.7 13.6 36.2 31.8 40.7C58.2 79.2 72 61.7 72 41V18L40 5z"
+          fill="rgba(255,255,255,0.07)" stroke="url(#shieldStroke)" stroke-width="1.8"/>
+    <!-- Flame -->
+    <path d="M40 20c-4.5 6.5-6 13-4.5 18.5s6 10 4.5 16.5c6.5-5 9.5-11 8-16.5 5 4 6 11 4.5 16 5-6.5 5-17-1.5-22.5-2 3.5-4 7-4 10.5-3.5-7.5-5.5-14.5-7-22.5z"
+          fill="url(#flameG)" filter="url(#glow)"/>
+  </g>
+
+  <!-- Top red accent line -->
+  <rect x="0" y="0" width="1200" height="5" fill="#C0392B"/>
+
+  <!-- SAM text -->
+  <text x="600" y="215" font-family="Arial Black, Impact, sans-serif" font-size="118" font-weight="900"
+        fill="white" text-anchor="middle" letter-spacing="-2" opacity="0.97">SAM</text>
+
+  <!-- INCENDIE text -->
+  <text x="600" y="342" font-family="Arial Black, Impact, sans-serif" font-size="118" font-weight="900"
+        fill="#e74c3c" text-anchor="middle" letter-spacing="-2">INCENDIE</text>
+
+  <!-- Separator line -->
+  <line x1="260" y1="372" x2="940" y2="372" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+
+  <!-- Tagline -->
+  <text x="600" y="415" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400"
+        fill="rgba(255,255,255,0.78)" text-anchor="middle" letter-spacing="5">EXPERT EN SÉCURITÉ INCENDIE</text>
+
+  <!-- 4 service chips -->
+  <!-- Audit -->
+  <rect x="218" y="448" width="148" height="44" rx="22" fill="rgba(255,255,255,0.09)" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
+  <text x="292" y="475" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="white" text-anchor="middle">📋 Audit ERP</text>
+
+  <!-- Formation -->
+  <rect x="380" y="448" width="158" height="44" rx="22" fill="rgba(255,255,255,0.09)" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
+  <text x="459" y="475" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="white" text-anchor="middle">🎓 Formation</text>
+
+  <!-- Réglementation -->
+  <rect x="552" y="448" width="198" height="44" rx="22" fill="rgba(192,57,43,0.35)" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="651" y="475" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="white" text-anchor="middle">📚 Réglementation</text>
+
+  <!-- Conseil -->
+  <rect x="764" y="448" width="140" height="44" rx="22" fill="rgba(255,255,255,0.09)" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
+  <text x="834" y="475" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="white" text-anchor="middle">💡 Conseil</text>
+
+  <!-- Badge 2026 -->
+  <rect x="1060" y="28" width="112" height="36" rx="18" fill="#C0392B"/>
+  <text x="1116" y="52" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="white" text-anchor="middle" letter-spacing="1">MÀJ 2026</text>
+
+  <!-- URL bottom -->
+  <text x="600" y="572" font-family="Arial, Helvetica, sans-serif" font-size="21"
+        fill="rgba(255,255,255,0.38)" text-anchor="middle" letter-spacing="3">samincendie.fr</text>
+
+  <!-- Bottom red bar -->
+  <rect x="0" y="600" width="1200" height="30" fill="rgba(192,57,43,0.85)"/>
+  <text x="600" y="621" font-family="Arial, sans-serif" font-size="13" fill="rgba(255,255,255,0.9)"
+        text-anchor="middle" letter-spacing="3.5">ERP · IGH · HAB · BUP · ICPE · RÉGLEMENTATION 2026</text>
+</svg>

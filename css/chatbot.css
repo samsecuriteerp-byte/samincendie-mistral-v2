@@ -1,0 +1,292 @@
+/* ===== CHATBOT WIDGET ===== */
+#sam-chat-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Bouton flottant */
+#sam-chat-toggle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e63012, #c0392b);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(230, 48, 18, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+#sam-chat-toggle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(230, 48, 18, 0.55);
+}
+
+#sam-chat-toggle svg {
+  width: 26px;
+  height: 26px;
+  fill: #fff;
+  transition: opacity 0.2s;
+}
+
+#sam-chat-toggle .icon-close { display: none; }
+#sam-chat-widget.open #sam-chat-toggle .icon-chat  { display: none; }
+#sam-chat-widget.open #sam-chat-toggle .icon-close { display: block; }
+
+/* Badge notification */
+#sam-chat-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 18px;
+  height: 18px;
+  background: #ff9500;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse-badge 2s infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* Fenêtre de chat */
+#sam-chat-window {
+  position: absolute;
+  bottom: 68px;
+  right: 0;
+  width: 360px;
+  max-height: 520px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0.85) translateY(20px);
+  transform-origin: bottom right;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+#sam-chat-widget.open #sam-chat-window {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* En-tête */
+#sam-chat-header {
+  background: linear-gradient(135deg, #e63012, #c0392b);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.sam-chat-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.sam-chat-header-info { flex: 1; }
+.sam-chat-header-info strong {
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+.sam-chat-header-info span {
+  color: rgba(255,255,255,0.8);
+  font-size: 11px;
+}
+
+.sam-chat-status-dot {
+  width: 8px;
+  height: 8px;
+  background: #4ade80;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px #4ade80;
+}
+
+/* Zone messages */
+#sam-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f8f9fa;
+}
+
+#sam-chat-messages::-webkit-scrollbar { width: 4px; }
+#sam-chat-messages::-webkit-scrollbar-track { background: transparent; }
+#sam-chat-messages::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+
+/* Bulles */
+.sam-msg {
+  max-width: 82%;
+  padding: 9px 13px;
+  border-radius: 14px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.sam-msg.bot {
+  align-self: flex-start;
+  background: #fff;
+  color: #1a1a1a;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.sam-msg.user {
+  align-self: flex-end;
+  background: #e63012;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+/* Indicateur de frappe */
+.sam-msg.typing {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+.sam-msg.typing span {
+  width: 7px;
+  height: 7px;
+  background: #bbb;
+  border-radius: 50%;
+  animation: typing-dot 1.2s infinite;
+}
+
+.sam-msg.typing span:nth-child(2) { animation-delay: 0.2s; }
+.sam-msg.typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing-dot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-5px); opacity: 1; }
+}
+
+/* Suggestions rapides */
+#sam-chat-suggestions {
+  padding: 0 16px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  background: #f8f9fa;
+  flex-shrink: 0;
+}
+
+.sam-suggestion {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 5px 11px;
+  font-size: 12px;
+  color: #e63012;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.sam-suggestion:hover {
+  background: #fef2f0;
+  border-color: #e63012;
+}
+
+/* Zone de saisie */
+#sam-chat-input-area {
+  padding: 12px;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+#sam-chat-input {
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  border-radius: 22px;
+  padding: 9px 14px;
+  font-size: 13px;
+  outline: none;
+  resize: none;
+  max-height: 80px;
+  line-height: 1.4;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+#sam-chat-input:focus { border-color: #e63012; }
+#sam-chat-input::placeholder { color: #aaa; }
+
+#sam-chat-send {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e63012;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.15s;
+}
+
+#sam-chat-send:hover { background: #c0392b; transform: scale(1.05); }
+#sam-chat-send:disabled { background: #ccc; cursor: default; transform: none; }
+
+#sam-chat-send svg { width: 16px; height: 16px; fill: #fff; }
+
+/* Footer */
+#sam-chat-footer {
+  padding: 6px 12px;
+  text-align: center;
+  font-size: 10px;
+  color: #bbb;
+  background: #fff;
+  border-top: 1px solid #f0f0f0;
+}
+
+#sam-chat-footer a { color: #e63012; text-decoration: none; }
+
+/* Responsive mobile */
+@media (max-width: 420px) {
+  #sam-chat-window {
+    width: calc(100vw - 32px);
+    right: -8px;
+    bottom: 72px;
+  }
+}

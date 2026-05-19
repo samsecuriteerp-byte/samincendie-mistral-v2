@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sam Incendie | Consultant &amp; Expert en Sécurité Incendie ERP – Audit, Conseil, Formation</title>
+  <meta name="description" content="Sam Incendie, votre consultant et expert en sécurité incendie pour les ERP. Audit réglementaire, conseil en conformité, formation du personnel. Devis gratuit sous 24h. Paris – Île-de-France." />
+  <meta name="keywords" content="Sam Incendie expert sécurité, SSIAP 3, consultant sécurité incendie, expert ERP, formation incendie" />
+  <meta name="author" content="Sam Incendie" />
+  <meta property="og:title" content="Sam Incendie | Consultant &amp; Expert en Sécurité Incendie ERP" />
+  <meta property="og:description" content="Audit, conseil, information et formation en sécurité incendie pour les ERP. Expertise réglementaire certifiée. Paris – IDF." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" /></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Sam Incendie",
+    "description": "Consultant et expert en sécurité incendie – Audit, Conseil, Information et Formation pour ERP",
+    "telephone": "+33781596364",
+    "email": "contact@sam-incendie.fr",
+    "address": { "@type": "PostalAddress", "addressLocality": "Paris", "addressRegion": "Île-de-France", "addressCountry": "FR" },
+    "serviceType": ["Audit sécurité incendie", "Formation incendie", "Conseil réglementaire", "Information réglementaire"]
+  }
+  </script>
+<style>
+/* =========================================================
+   SAM INCENDIE — Feuille de styles intégrée
+   Rouge #C0392B · Navy #1A2E4A · Orange #E67E22
+========================================================= */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#C0392B;--red-dark:#962d22;--red-light:#e84c3d;
+  --navy:#1A2E4A;--navy-light:#253d61;
+  --grey-bg:#F4F6F8;--grey-dark:#2C3E50;--grey-mid:#6c7a89;--grey-light:#d5dce6;
+  --orange:#E67E22;--orange-dark:#d06b12;
+  --white:#FFFFFF;--green:#27AE60;
+  --shadow-sm:0 2px 8px rgba(26,46,74,.08);--shadow-md:0 4px 24px rgba(26,46,74,.12);
+  --radius:12px;--radius-sm:8px;--radius-lg:20px;
+  --transition:.25s ease;--max-width:1200px;
+  --font-head:'Montserrat',sans-serif;--font-body:'Open Sans',sans-serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);color:var(--grey-dark);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--red);text-decoration:none;transition:color var(--transition)}
+a:hover{color:var(--red-dark)}
+a:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
+.section{padding:80px 0}
+h1,h2,h3,h4{font-family:var(--font-head);line-height:1.25;color:var(--navy)}
+h1{font-size:clamp(2rem,5vw,3.25rem);font-weight:800}
+h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700}
+h3{font-size:clamp(1.1rem,2.5vw,1.35rem);font-weight:600}
+p{margin-bottom:1em}p:last-child{margin-bottom:0}
+strong{font-weight:600;color:var(--navy)}
+
+/* BOUTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-weight:600;font-size:.95rem;padding:13px 28px;border-radius:50px;border:2px solid transparent;cursor:pointer;transition:background var(--transition),color var(--transition),border-color var(--transition),transform var(--transition),box-shadow var(--transition);text-decoration:none;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:translateY(0)}
+.btn--primary{background:var(--red);color:var(--white);border-color:var(--red);box-shadow:0 4px 16px rgba(192,57,43,.3)}
+.btn--primary:hover{background:var(--red-dark);border-color:var(--red-dark);color:var(--white);box-shadow:0 6px 24px rgba(192,57,43,.4)}
+.btn--outline{background:transparent;color:var(--white);border-color:rgba(255,255,255,.6)}
+.btn--outline:hover{background:rgba(255,255,255,.12);border-color:var(--white);color:var(--white)}
+.btn--lg{padding:16px 36px;font-size:1.05rem}.btn--full{width:100%;justify-content:center}
+
+/* LOGO */
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo__text{display:flex;flex-direction:column}
+.logo__name{font-family:var(--font-head);font-weight:800;font-size:1.2rem;color:var(--white);line-height:1.1;letter-spacing:-.5px}
+.logo__tagline{font-size:.68rem;color:rgba(255,255,255,.7);font-weight:400;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
+.logo--light .logo__name{color:var(--navy)}.logo--light .logo__tagline{color:var(--grey-mid)}
+
+/* HEADER */
+.header{position:sticky;top:0;z-index:1000;background:var(--navy);box-shadow:0 2px 12px rgba(0,0,0,.18);transition:background var(--transition)}
+.header__inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.header.scrolled{background:rgba(26,46,74,.97);backdrop-filter:blur(8px)}
+.nav__list{display:flex;align-items:center;gap:4px;list-style:none}
+.nav__link{font-family:var(--font-head);font-weight:600;font-size:.88rem;color:rgba(255,255,255,.85);padding:8px 14px;border-radius:6px;text-decoration:none;transition:background var(--transition),color var(--transition)}
+.nav__link:hover,.nav__link.active{background:rgba(255,255,255,.1);color:var(--white)}
+.nav__link--cta{background:var(--red);color:var(--white)!important;padding:9px 20px;border-radius:50px;margin-left:8px}
+.nav__link--cta:hover{background:var(--red-dark)!important}
+.nav__burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:4px}
+.nav__burger span{display:block;height:2.5px;background:var(--white);border-radius:2px;transition:transform var(--transition),opacity var(--transition)}
+.nav__burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.nav__burger.open span:nth-child(2){opacity:0}
+.nav__burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+/* HERO */
+.hero{position:relative;background:linear-gradient(135deg,var(--navy) 0%,#0f1e30 55%,#1e0a08 100%);padding:100px 0 120px;overflow:hidden;color:var(--white)}
+.hero__bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(192,57,43,.18) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 80%,rgba(230,126,34,.08) 0%,transparent 60%);pointer-events:none}
+.hero__inner{position:relative;z-index:1;max-width:760px}
+.hero__badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.9);font-size:.82rem;font-weight:600;padding:6px 16px;border-radius:50px;margin-bottom:24px;letter-spacing:.3px}
+.hero__title{color:var(--white);margin-bottom:20px;text-shadow:0 2px 16px rgba(0,0,0,.3)}
+.hero__title--accent{color:var(--red-light)}
+.hero__subtitle{font-size:clamp(1rem,2.2vw,1.2rem);color:rgba(255,255,255,.8);margin-bottom:36px;line-height:1.6}
+.hero__actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px}
+.hero__trust{display:flex;gap:24px;flex-wrap:wrap}
+.hero__trust span{display:flex;align-items:center;gap:6px;font-size:.85rem;color:rgba(255,255,255,.75)}
+.hero__wave{position:absolute;bottom:-1px;left:0;right:0;height:80px;pointer-events:none}
+.hero__wave svg{width:100%;height:100%}
+
+/* STATS */
+.stats{background:var(--grey-bg);padding:60px 0}
+.stats__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stat-card{background:var(--white);border-radius:var(--radius);padding:32px 24px;text-align:center;box-shadow:var(--shadow-sm);border-top:4px solid var(--red);transition:transform var(--transition),box-shadow var(--transition)}
+.stat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.stat-card__number{display:block;font-family:var(--font-head);font-size:3rem;font-weight:800;color:var(--red);line-height:1}
+.stat-card__unit{display:block;font-family:var(--font-head);font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.stat-card__label{font-size:.82rem;color:var(--grey-mid);line-height:1.4}
+
+/* ALERT BAND */
+.alert-band{background:linear-gradient(90deg,var(--orange-dark),var(--orange));color:var(--white);padding:14px 0}
+.alert-band .container{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:.9rem}
+.alert-band a{color:var(--white);font-weight:700;text-decoration:underline;margin-left:8px}
+.alert-band a:hover{opacity:.85}
+
+/* SECTION COMMONS */
+.section__header{text-align:center;max-width:680px;margin:0 auto 56px}
+.section__tag{display:inline-block;font-family:var(--font-head);font-size:.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);background:rgba(192,57,43,.08);padding:5px 14px;border-radius:50px;margin-bottom:14px}
+.section__title{margin-bottom:16px}
+.section__lead{color:var(--grey-mid);font-size:1.05rem;line-height:1.7}
+
+/* SERVICES */
+.services{background:var(--white)}
+.services__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.service-card{background:var(--white);border:2px solid var(--grey-light);border-radius:var(--radius-lg);padding:36px 32px;position:relative;transition:border-color var(--transition),box-shadow var(--transition),transform var(--transition)}
+.service-card:hover{border-color:var(--red);box-shadow:var(--shadow-md);transform:translateY(-4px)}
+.service-card--featured{border-color:var(--red);background:linear-gradient(135deg,#fdf8f7 0%,#fff5f4 100%);box-shadow:var(--shadow-sm)}
+.service-card__badge{position:absolute;top:20px;right:20px;background:var(--red);color:var(--white);font-family:var(--font-head);font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:50px;letter-spacing:.5px;text-transform:uppercase}
+.service-card__icon{width:64px;height:64px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.service-card__icon--info{background:rgba(26,46,74,.08);color:var(--navy)}
+.service-card__icon--conseil{background:rgba(230,126,34,.1);color:var(--orange-dark)}
+.service-card__icon--audit{background:rgba(192,57,43,.08);color:var(--red)}
+.service-card__icon--formation{background:rgba(39,174,96,.1);color:#219A52}
+.service-card__title{margin-bottom:12px;color:var(--navy)}
+.service-card__text{color:var(--grey-mid);margin-bottom:16px;font-size:.95rem}
+.service-card__list{list-style:none;margin-bottom:20px}
+.service-card__list li{padding:4px 0 4px 22px;position:relative;font-size:.9rem;color:var(--grey-dark)}
+.service-card__list li::before{content:'';position:absolute;left:0;top:11px;width:8px;height:8px;background:var(--red);border-radius:50%;opacity:.7}
+.service-card__link{font-family:var(--font-head);font-weight:700;font-size:.88rem;color:var(--red);text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+.service-card__link:hover{gap:8px}
+.services__cta{text-align:center;margin-top:48px}
+
+/* PROCESSUS */
+.process{background:var(--grey-bg)}
+.process__steps{display:flex;align-items:flex-start;gap:16px}
+.process__step{flex:1;background:var(--white);border-radius:var(--radius);padding:32px 24px;text-align:center;box-shadow:var(--shadow-sm)}
+.process__step-num{font-family:var(--font-head);font-size:2.5rem;font-weight:800;color:rgba(192,57,43,.15);line-height:1;margin-bottom:12px}
+.process__step-title{color:var(--navy);margin-bottom:10px;font-size:1rem}
+.process__step p{color:var(--grey-mid);font-size:.9rem;margin:0}
+.process__arrow{font-size:1.8rem;color:var(--grey-light);padding-top:40px;flex-shrink:0}
+
+/* SECTEURS */
+.secteurs{background:var(--white)}
+.secteurs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.secteur-card{display:block;background:var(--white);border:2px solid var(--grey-light);border-radius:var(--radius);padding:28px 24px;text-decoration:none;transition:border-color var(--transition),box-shadow var(--transition),transform var(--transition)}
+.secteur-card:hover{border-color:var(--red);box-shadow:var(--shadow-sm);transform:translateY(-3px);color:inherit}
+.secteur-card__icon{width:52px;height:52px;background:var(--grey-bg);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--navy);transition:background var(--transition),color var(--transition)}
+.secteur-card:hover .secteur-card__icon{background:rgba(192,57,43,.08);color:var(--red)}
+.secteur-card__title{font-size:1.1rem;color:var(--navy);margin-bottom:6px}
+.secteur-card__subtitle{font-size:.82rem;color:var(--grey-mid);margin-bottom:16px;line-height:1.5}
+.secteur-card__link{font-family:var(--font-head);font-size:.82rem;font-weight:700;color:var(--red)}
+
+/* RÉGLEMENTATION */
+.reglementation{background:var(--grey-bg)}
+.reglem__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.reglem__card{background:var(--white);border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow-sm)}
+.reglem__card-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.reglem__card-icon{font-size:1.5rem}
+.reglem__card h3{color:var(--navy);margin-bottom:0}
+.reglem__card p{color:var(--grey-mid);font-size:.93rem;margin-bottom:14px}
+.reglem__card ul{list-style:none}
+.reglem__card ul li{padding:5px 0 5px 20px;position:relative;font-size:.88rem;color:var(--grey-dark)}
+.reglem__card ul li::before{content:'→';position:absolute;left:0;color:var(--red);font-weight:700}
+.reglem__table{border:1px solid var(--grey-light);border-radius:var(--radius-sm);overflow:hidden}
+.reglem__row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;font-size:.88rem;border-bottom:1px solid var(--grey-light);gap:8px}
+.reglem__row:last-child{border-bottom:none}
+.reglem__row--header{background:var(--grey-bg);font-family:var(--font-head);font-weight:700;font-size:.78rem;color:var(--grey-mid);text-transform:uppercase;letter-spacing:.5px}
+.badge{display:inline-block;font-family:var(--font-head);font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:50px;white-space:nowrap}
+.badge--required{background:rgba(192,57,43,.1);color:var(--red)}
+.badge--recommended{background:rgba(230,126,34,.1);color:var(--orange-dark)}
+
+/* BLOG */
+.blog{background:var(--white)}
+.blog__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.blog-card{background:var(--white);border:2px solid var(--grey-light);border-radius:var(--radius);overflow:hidden;transition:border-color var(--transition),box-shadow var(--transition),transform var(--transition)}
+.blog-card:hover{border-color:var(--red);box-shadow:var(--shadow-md);transform:translateY(-4px)}
+.blog-card__img{background:var(--grey-bg);padding:40px;display:flex;align-items:center;justify-content:center}
+.blog-card__content{padding:24px}
+.blog-card__tag{display:inline-block;font-family:var(--font-head);font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--red);background:rgba(192,57,43,.08);padding:3px 10px;border-radius:50px;margin-bottom:12px}
+.blog-card__title{font-size:1rem;color:var(--navy);margin-bottom:10px;line-height:1.4}
+.blog-card__title a{color:var(--navy)}.blog-card__title a:hover{color:var(--red)}
+.blog-card__excerpt{font-size:.88rem;color:var(--grey-mid);margin-bottom:16px;line-height:1.6}
+.blog-card__link{font-family:var(--font-head);font-size:.85rem;font-weight:700;color:var(--red)}
+.blog__cta{text-align:center;margin-top:40px}
+.blog__cta .btn--outline{color:var(--red);border-color:var(--red)}
+.blog__cta .btn--outline:hover{background:var(--red);color:var(--white)}
+
+/* À PROPOS */
+.about{background:linear-gradient(135deg,var(--navy) 0%,#0f1e30 100%);color:var(--white)}
+.about .section__tag{color:var(--orange);background:rgba(230,126,34,.15)}
+.about__inner{display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:center}
+.about__visual{display:flex;flex-direction:column;align-items:center;gap:24px}
+.about__avatar{width:160px;height:160px;background:rgba(255,255,255,.08);border:3px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.about__badge-group{display:flex;flex-direction:column;gap:12px;width:100%}
+.about__cert{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-sm);padding:10px 16px;font-size:.85rem;font-weight:600;color:rgba(255,255,255,.9)}
+.about__content .section__title{color:var(--white)}
+.about__content p{color:rgba(255,255,255,.78);font-size:.97rem;margin-bottom:14px}
+.about__content strong{color:var(--white)}
+.about__values{display:flex;flex-direction:column;gap:10px;margin:20px 0 28px}
+.about__value{display:flex;align-items:flex-start;gap:10px;font-size:.93rem;color:rgba(255,255,255,.8)}
+.about__value svg{flex-shrink:0;margin-top:2px}
+.about__value strong{color:var(--white)}
+
+/* FAQ */
+.faq{background:var(--grey-bg)}
+.faq__list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq__item{background:var(--white);border:2px solid var(--grey-light);border-radius:var(--radius);overflow:hidden;transition:border-color var(--transition)}
+.faq__item:focus-within,.faq__item.open{border-color:var(--red)}
+.faq__question{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;background:none;border:none;text-align:left;font-family:var(--font-head);font-size:.97rem;font-weight:600;color:var(--navy);cursor:pointer;transition:color var(--transition)}
+.faq__question:hover{color:var(--red)}
+.faq__icon{font-size:1.4rem;font-weight:400;color:var(--red);flex-shrink:0;transition:transform var(--transition)}
+.faq__item.open .faq__icon{transform:rotate(45deg)}
+.faq__answer{padding:0 24px 20px}
+.faq__answer p{color:var(--grey-mid);font-size:.93rem;margin:0}
+
+/* CONTACT */
+.contact{background:var(--white)}
+.contact__inner{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+.contact__info .section__title{margin-bottom:16px}
+.contact__info>p{color:var(--grey-mid);margin-bottom:32px}
+.contact__details{display:flex;flex-direction:column;gap:20px}
+.contact__detail{display:flex;align-items:flex-start;gap:14px}
+.contact__detail-icon{width:44px;height:44px;background:rgba(192,57,43,.08);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--red);flex-shrink:0}
+.contact__detail div{display:flex;flex-direction:column}
+.contact__detail strong{font-family:var(--font-head);font-size:.85rem;color:var(--navy)}
+.contact__detail span{font-size:.9rem;color:var(--grey-mid)}
+.contact__form-wrapper{background:var(--grey-bg);border-radius:var(--radius-lg);padding:40px 36px;border:2px solid var(--grey-light)}
+.contact__form-title{font-size:1.2rem;color:var(--navy);margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--grey-light)}
+.form__row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form__group{display:flex;flex-direction:column;margin-bottom:18px}
+.form__group--checkbox{flex-direction:row;align-items:flex-start;gap:10px;margin-top:4px}
+.form__label{font-family:var(--font-head);font-size:.82rem;font-weight:600;color:var(--navy);margin-bottom:7px;display:flex;gap:3px}
+.form__label span{color:var(--red)}
+.form__label-check{font-size:.82rem;color:var(--grey-mid);line-height:1.5;cursor:pointer;flex:1}
+.form__label-check a{color:var(--red)}
+.form__input{padding:11px 14px;border:2px solid var(--grey-light);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.93rem;color:var(--grey-dark);background:var(--white);transition:border-color var(--transition),box-shadow var(--transition);outline:none;width:100%}
+.form__input:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(192,57,43,.12)}
+.form__input.error{border-color:var(--red)}
+.form__select{appearance:none;cursor:pointer}
+.form__textarea{resize:vertical;min-height:100px}
+.form__checkbox{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--red);cursor:pointer}
+.form__error{font-size:.78rem;color:var(--red);margin-top:4px;min-height:1em}
+.form__success{display:flex;align-items:center;gap:10px;background:rgba(39,174,96,.08);border:2px solid rgba(39,174,96,.3);border-radius:var(--radius-sm);padding:14px 16px;color:var(--green);font-weight:600;font-size:.93rem;margin-top:16px}
+
+/* FOOTER */
+.footer{background:var(--navy);color:rgba(255,255,255,.75);padding-top:64px}
+.footer__inner{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer__brand .logo{margin-bottom:16px}
+.footer__desc{font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.6}
+.footer__nav{display:contents}
+.footer__col h4{font-family:var(--font-head);font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--white);margin-bottom:16px}
+.footer__col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer__col a{font-size:.85rem;color:rgba(255,255,255,.6);text-decoration:none;transition:color var(--transition)}
+.footer__col a:hover{color:var(--white)}
+.footer__bottom{padding:20px 0}
+.footer__bottom .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:.8rem;color:rgba(255,255,255,.4)}
+.footer__bottom a{color:rgba(255,255,255,.5)}.footer__bottom a:hover{color:var(--white)}
+
+/* BACK TO TOP */
+.back-to-top{position:fixed;bottom:28px;right:28px;z-index:900;width:48px;height:48px;background:var(--red);color:var(--white);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px rgba(192,57,43,.4);transition:opacity var(--transition),transform var(--transition),background var(--transition);opacity:0;pointer-events:none}
+.back-to-top.visible{opacity:1;pointer-events:auto}
+.back-to-top:hover{background:var(--red-dark);transform:translateY(-2px)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .footer__inner{grid-template-columns:1fr 1fr}
+  .footer__brand{grid-column:1/-1}
+  .footer__nav{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;grid-column:1/-1}
+  .stats__grid{grid-template-columns:repeat(2,1fr)}
+  .services__grid{grid-template-columns:1fr}
+  .secteurs__grid{grid-template-columns:repeat(2,1fr)}
+  .reglem__grid{grid-template-columns:1fr}
+  .contact__inner{grid-template-columns:1fr;gap:40px}
+  .about__inner{grid-template-columns:1fr;gap:40px}
+  .about__visual{flex-direction:row;justify-content:flex-start;align-items:center}
+  .about__badge-group{flex-direction:row}
+  .process__steps{flex-wrap:wrap}
+  .process__arrow{display:none}
+  .process__step{min-width:calc(50% - 8px)}
+}
+@media(max-width:768px){
+  .section{padding:60px 0}
+  .nav{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:var(--navy);z-index:999;padding:24px;overflow-y:auto}
+  .nav.open{display:flex;flex-direction:column}
+  .nav__list{flex-direction:column;gap:4px}
+  .nav__link{font-size:1.05rem;padding:12px 16px}
+  .nav__link--cta{text-align:center;border-radius:var(--radius-sm);margin-left:0;margin-top:8px}
+  .nav__burger{display:flex}
+  .hero{padding:72px 0 100px}
+  .hero__actions{flex-direction:column}
+  .hero__actions .btn{width:100%;justify-content:center}
+  .hero__trust{flex-direction:column;gap:10px}
+  .stats__grid{grid-template-columns:1fr 1fr;gap:16px}
+  .stat-card__number{font-size:2.4rem}
+  .services__grid,.secteurs__grid,.blog__grid,.reglem__grid{grid-template-columns:1fr}
+  .process__step{min-width:100%}
+  .contact__form-wrapper{padding:24px 20px}
+  .form__row{grid-template-columns:1fr}
+  .about__visual{flex-direction:column}
+  .about__badge-group{flex-direction:column;width:100%;max-width:320px}
+  .footer__inner{grid-template-columns:1fr 1fr}
+  .footer__nav{grid-template-columns:1fr 1fr}
+  .footer__bottom .container{flex-direction:column;text-align:center}
+}
+@media(max-width:480px){
+  .container{padding:0 16px}
+  .stats__grid{grid-template-columns:1fr}
+  .footer__nav,.footer__inner{grid-template-columns:1fr}
+  .back-to-top{bottom:16px;right:16px}
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://samincendie.fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "À propos — Sam Incendie",
+      "item": "https://samincendie.fr/sam-incendie.html"
+    }
+  ]
+}
+  </script>
+  <link rel="stylesheet" href="css/chatbot.css" />
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#accueil" class="logo" aria-label="Sam Incendie - Accueil">
+        <span class="logo__icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 3L4 10v10c0 9.4 6.8 18.2 16 20.4C29.2 38.2 36 29.4 36 20V10L20 3z" fill="#1A2E4A"/>
+            <path d="M20 3L4 10v10c0 9.4 6.8 18.2 16 20.4" fill="#C0392B" opacity="0.85"/>
+            <path d="M20 12c-1.5 2-2 4-1.5 6s2 3.5 1.5 5.5c2-1.5 3-3.5 2.5-5.5 1.5 1 2 3 1.5 5 1.5-2 1.5-5-0.5-7-0.5 1-1 2-1 3-1-2-1.5-4.5-2.5-7z" fill="white"/>
+          </svg>
+        </span>
+        <span class="logo__text">
+          <span class="logo__name">Sam Incendie</span>
+          <span class="logo__tagline">Consultant &amp; Expert en Sécurité Incendie</span>
+        </span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="#services" class="nav__link">Services</a></li>
+          <li><a href="cours.html" class="nav__link">Cours</a></li>
+          <li><a href="exercices.html" class="nav__link">Exercices</a></li>
+          <li><a href="actualites.html" class="nav__link">Actualités</a></li>
+          <li><a href="reglementation.html" class="nav__link">Réglementation</a></li>
+          <li><a href="formations.html" class="nav__link">Formations</a></li>
+          <li><a href="#blog" class="nav__link">Ressources</a></li>
+          <li><a href="produits.html" class="nav__link">Produits</a></li>
+          <li><a href="#contact" class="nav__link nav__link--cta">Devis gratuit</a></li>
+        </ul>
+      </nav>
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="accueil" aria-label="Présentation">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__badge">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#C0392B"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Expert certifié en sécurité incendie
+        </div>
+        <h1 class="hero__title">Votre expert en sécurité incendie<br /><span class="hero__title--accent">pour les ERP</span></h1>
+        <p class="hero__subtitle">Information · Conseil · Audit · Formation<br />Protégez vos occupants et garantissez votre conformité réglementaire.</p>
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn--primary btn--lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+            Demander un audit gratuit
+          </a>
+          <a href="#services" class="btn btn--outline btn--lg">Découvrir nos services</a>
+        </div>
+        <div class="hero__trust">
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>Réponse sous 24h</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>Devis gratuit et sans engagement</span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>Expert indépendant certifié</span>
+        </div>
+      </div>
+      <div class="hero__wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#F4F6F8"/></svg>
+      </div>
+    </section>
+
+    <!-- CHIFFRES CLÉS -->
+    <section class="stats" id="chiffres" aria-label="Chiffres clés">
+      <div class="container stats__grid">
+        <div class="stat-card"><span class="stat-card__number" data-target="1">1</span><span class="stat-card__unit">toutes les 2 min</span><span class="stat-card__label">incendie déclaré en France</span></div>
+        <div class="stat-card"><span class="stat-card__number" data-target="40">40</span><span class="stat-card__unit">%</span><span class="stat-card__label">des ERP non conformes à la réglementation</span></div>
+        <div class="stat-card"><span class="stat-card__number" data-target="70">70</span><span class="stat-card__unit">%</span><span class="stat-card__label">des incendies sont évitables avec la prévention</span></div>
+        <div class="stat-card"><span class="stat-card__number" data-target="100">100</span><span class="stat-card__unit">%</span><span class="stat-card__label">responsabilité pénale de l'exploitant ERP</span></div>
+      </div>
+    </section>
+
+    <!-- ALERTE -->
+    <div class="alert-band" role="alert">
+      <div class="container">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <strong>Rappel réglementaire :</strong> L'article R.4227-28 du Code du travail impose à tout employeur de former ses salariés à la prévention et à la lutte contre l'incendie.
+        <a href="#services">En savoir plus →</a>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">Ce que nous faisons</span>
+          <h2 class="section__title" id="services-title">Nos services en sécurité incendie</h2>
+          <p class="section__lead">Une offre complète pour accompagner les exploitants d'ERP et les entreprises de la prévention à la mise en conformité.</p>
+        </div>
+        <div class="services__grid">
+          <article class="service-card" aria-label="Service Information">
+            <div class="service-card__icon service-card__icon--info" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+            <h3 class="service-card__title">Information &amp; Veille réglementaire</h3>
+            <p class="service-card__text">Accédez à une information claire et actualisée sur les textes réglementaires applicables à votre établissement (ERP, ICPE, bâtiments tertiaires).</p>
+            <ul class="service-card__list"><li>Analyse du cadre légal applicable</li><li>Veille réglementaire personnalisée</li><li>Guides pratiques sectoriels</li><li>Réponses aux questions réglementaires</li></ul>
+            <a href="#contact" class="service-card__link">Nous contacter →</a>
+          </article>
+          <article class="service-card" aria-label="Service Conseil">
+            <div class="service-card__icon service-card__icon--conseil" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <h3 class="service-card__title">Conseil en sécurité incendie</h3>
+            <p class="service-card__text">Un accompagnement sur-mesure pour définir votre politique de sécurité incendie, identifier les risques et mettre en place les mesures préventives adaptées.</p>
+            <ul class="service-card__list"><li>Analyse de risques incendie</li><li>Plan de prévention personnalisé</li><li>Aide à la rédaction du registre de sécurité</li><li>Accompagnement commission de sécurité</li></ul>
+            <a href="#contact" class="service-card__link">Nous contacter →</a>
+          </article>
+          <article class="service-card service-card--featured" aria-label="Service Audit">
+            <div class="service-card__badge">Populaire</div>
+            <div class="service-card__icon service-card__icon--audit" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg></div>
+            <h3 class="service-card__title">Audit &amp; Diagnostic incendie</h3>
+            <p class="service-card__text">Un audit terrain complet de votre établissement pour identifier tous les manquements réglementaires et vous fournir un plan d'action hiérarchisé.</p>
+            <ul class="service-card__list"><li>Inspection complète des installations</li><li>Vérification des équipements (extincteurs, SSI, désenfumage)</li><li>Contrôle documentaire (registre, consignes)</li><li>Rapport détaillé avec plan d'action priorisé</li></ul>
+            <a href="#contact" class="service-card__link">Demander un audit →</a>
+          </article>
+          <article class="service-card" aria-label="Service Formation">
+            <div class="service-card__icon service-card__icon--formation" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+            <h3 class="service-card__title">Formation sécurité incendie</h3>
+            <p class="service-card__text">Des formations pratiques et réglementaires pour sensibiliser vos équipes et former vos équipiers de première intervention (EPI).</p>
+            <ul class="service-card__list"><li>Sensibilisation incendie tous publics</li><li>Formation EPI (Équipier de Première Intervention)</li><li>Exercices d'évacuation encadrés</li><li>Formation aux équipements (extincteurs, RIA)</li></ul>
+            <a href="#contact" class="service-card__link">Nous contacter →</a>
+          </article>
+        </div>
+        <div class="services__cta"><a href="#contact" class="btn btn--primary">Demander un devis gratuit pour votre établissement</a></div>
+      </div>
+    </section>
+
+    <!-- PROCESSUS -->
+    <section class="section process" id="processus" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section__header"><span class="section__tag">Notre méthode</span><h2 class="section__title" id="process-title">Comment nous intervenons</h2></div>
+        <div class="process__steps">
+          <div class="process__step"><div class="process__step-num" aria-hidden="true">01</div><h3 class="process__step-title">Prise de contact</h3><p>Vous nous décrivez votre établissement et vos besoins. Nous répondons sous 24h avec une proposition adaptée.</p></div>
+          <div class="process__arrow" aria-hidden="true">→</div>
+          <div class="process__step"><div class="process__step-num" aria-hidden="true">02</div><h3 class="process__step-title">Diagnostic initial</h3><p>Analyse documentaire et visite terrain pour évaluer votre niveau de conformité réglementaire.</p></div>
+          <div class="process__arrow" aria-hidden="true">→</div>
+          <div class="process__step"><div class="process__step-num" aria-hidden="true">03</div><h3 class="process__step-title">Rapport &amp; Plan d'action</h3><p>Remise d'un rapport complet avec les non-conformités identifiées et un plan d'action priorisé.</p></div>
+          <div class="process__arrow" aria-hidden="true">→</div>
+          <div class="process__step"><div class="process__step-num" aria-hidden="true">04</div><h3 class="process__step-title">Suivi &amp; Accompagnement</h3><p>Accompagnement dans la mise en œuvre des actions correctives et suivi de la conformité dans le temps.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTEURS -->
+    <section class="section secteurs" id="secteurs" aria-labelledby="secteurs-title">
+      <div class="container">
+        <div class="section__header"><span class="section__tag">Domaines d'expertise</span><h2 class="section__title" id="secteurs-title">Nous intervenons dans tous les secteurs</h2><p class="section__lead">Chaque type d'établissement a ses propres obligations. Notre expertise couvre l'ensemble des catégories réglementaires.</p></div>
+        <div class="secteurs__grid">
+          <a href="#contact" class="secteur-card"><div class="secteur-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div><h3 class="secteur-card__title">ERP</h3><p class="secteur-card__subtitle">Hôtels · Restaurants · Écoles · Commerces · Salles de spectacle</p><span class="secteur-card__link">Voir les obligations →</span></a>
+          <a href="#contact" class="secteur-card"><div class="secteur-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div><h3 class="secteur-card__title">Industrie &amp; ICPE</h3><p class="secteur-card__subtitle">Usines · Entrepôts · Sites classés · Zones industrielles</p><span class="secteur-card__link">Voir les obligations →</span></a>
+          <a href="#contact" class="secteur-card"><div class="secteur-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg></div><h3 class="secteur-card__title">Bureaux &amp; Tertiaire</h3><p class="secteur-card__subtitle">Immeubles de bureaux · Open spaces · Cabinets · Cliniques</p><span class="secteur-card__link">Voir les obligations →</span></a>
+          <a href="#contact" class="secteur-card"><div class="secteur-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3"/><path d="M20.39 19a8 8 0 10-16.78 0"/><path d="M12 11v8"/><path d="M8 17h8"/></svg></div><h3 class="secteur-card__title">Collectivités</h3><p class="secteur-card__subtitle">Mairies · Gymnases · Médiathèques · Équipements publics</p><span class="secteur-card__link">Voir les obligations →</span></a>
+          <a href="#contact" class="secteur-card"><div class="secteur-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3 class="secteur-card__title">Santé &amp; Social</h3><p class="secteur-card__subtitle">EHPAD · Hôpitaux · Cliniques · Établissements de soins (type J &amp; U)</p><span class="secteur-card__link">Voir les obligations →</span></a>
+          <a href="#contact" class="secteur-card"><div class="secteur-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div><h3 class="secteur-card__title">Enseignement</h3><p class="secteur-card__subtitle">Écoles maternelles · Collèges · Lycées · Universités (type R)</p><span class="secteur-card__link">Voir les obligations →</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- RÉGLEMENTATION -->
+    <section class="section reglementation" id="reglementation" aria-labelledby="reglem-title">
+      <div class="container">
+        <div class="section__header"><span class="section__tag">Cadre légal</span><h2 class="section__title" id="reglem-title">Vos obligations réglementaires</h2><p class="section__lead">La réglementation incendie est complexe et évolue régulièrement. Voici les textes fondamentaux applicables aux ERP et aux entreprises.</p></div>
+        <div class="reglem__grid">
+          <div class="reglem__card"><div class="reglem__card-header"><span class="reglem__card-icon" aria-hidden="true">ðŸ“‹</span><h3>Code du travail</h3></div><p>Les articles <strong>R.4227-28 à R.4227-40</strong> imposent à l'employeur de prendre toutes mesures pour que tout commencement d'incendie puisse être rapidement et efficacement combattu.</p><ul><li>Formation des salariés à la prévention</li><li>Désignation d'équipiers de première intervention</li><li>Exercices d'évacuation obligatoires</li></ul></div>
+          <div class="reglem__card"><div class="reglem__card-header"><span class="reglem__card-icon" aria-hidden="true">ðŸ›ï¸</span><h3>Règlement ERP (CCH)</h3></div><p>Le <strong>Code de la Construction et de l'Habitation</strong> et son règlement de sécurité ERP (arrêté du 25 juin 1980) définissent les obligations selon le type et la catégorie de l'établissement.</p><ul><li>Classement par type (J, L, M, N, O, P, R, S, T, U, V, W, X, Y)</li><li>Classement par catégorie (1 à 5 selon capacité d'accueil)</li><li>Passage en commission de sécurité</li></ul></div>
+          <div class="reglem__card"><div class="reglem__card-header"><span class="reglem__card-icon" aria-hidden="true">ðŸ”¥</span><h3>Registre de sécurité</h3></div><p>Le <strong>registre de sécurité incendie</strong> est obligatoire pour tout ERP. Il consigne toutes les vérifications, formations, exercices et interventions réalisés dans l'établissement.</p><ul><li>Vérifications périodiques des équipements</li><li>Comptes-rendus des exercices d'évacuation</li><li>Formations du personnel</li></ul></div>
+          <div class="reglem__card"><div class="reglem__card-header"><span class="reglem__card-icon" aria-hidden="true">✅</span><h3>À retenir</h3></div><div class="reglem__table"><div class="reglem__row reglem__row--header"><span>Obligation</span><span>Statut</span></div><div class="reglem__row"><span>Formation incendie</span><span class="badge badge--required">Obligatoire</span></div><div class="reglem__row"><span>Exercice d'évacuation</span><span class="badge badge--required">Obligatoire</span></div><div class="reglem__row"><span>Audit sécurité incendie</span><span class="badge badge--recommended">Recommandé</span></div><div class="reglem__row"><span>Plan de prévention incendie</span><span class="badge badge--required">Obligatoire ERP</span></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section class="section blog" id="blog" aria-labelledby="blog-title">
+      <div class="container">
+        <div class="section__header"><span class="section__tag">Ressources</span><h2 class="section__title" id="blog-title">Guides &amp; Articles pratiques</h2><p class="section__lead">Des ressources gratuites pour comprendre vos obligations et améliorer votre niveau de sécurité incendie.</p></div>
+        <div class="blog__grid">
+          <article class="blog-card"><div class="blog-card__img" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div class="blog-card__content"><span class="blog-card__tag">Réglementation</span><h3 class="blog-card__title">Quelles sont les obligations de l'employeur en sécurité incendie ?</h3><p class="blog-card__excerpt">L'article R.4227-28 du Code du travail impose des obligations précises. Découvrez ce que la loi exige et les sanctions encourues en cas de manquement.</p><a href="#contact" class="blog-card__link">Nous consulter →</a></div></article>
+          <article class="blog-card"><div class="blog-card__img" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><div class="blog-card__content"><span class="blog-card__tag">Formation</span><h3 class="blog-card__title">Formation EPI : qui est concerné et comment l'organiser ?</h3><p class="blog-card__excerpt">Les Équipiers de Première Intervention sont le premier maillon de la chaîne de sécurité incendie. Ce guide vous explique comment organiser leur formation.</p><a href="#contact" class="blog-card__link">Nous consulter →</a></div></article>
+          <article class="blog-card"><div class="blog-card__img" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="blog-card__content"><span class="blog-card__tag">Audit</span><h3 class="blog-card__title">Comment se préparer à la commission de sécurité ERP ?</h3><p class="blog-card__excerpt">La commission de sécurité peut conditionner l'ouverture de votre établissement. Voici la checklist complète pour passer cette visite sans stress.</p><a href="#contact" class="blog-card__link">Nous consulter →</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container about__inner">
+        <div class="about__visual" aria-hidden="true">
+          <div class="about__avatar"><svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="about__badge-group">
+            <div class="about__cert"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Expert certifié</div>
+            <div class="about__cert"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Indépendant &amp; impartial</div>
+          </div>
+        </div>
+        <div class="about__content">
+          <span class="section__tag">À propos</span>
+          <h2 class="section__title" id="about-title">Un expert à votre service</h2>
+          <p>Sam Incendie est un cabinet de conseil indépendant spécialisé en sécurité incendie pour les Établissements Recevant du Public (ERP) et les entreprises, basé à <strong>Paris (Île-de-France)</strong>. Notre mission : <strong>vous aider à protéger vos occupants et à garantir votre conformité réglementaire</strong>, sans jargon inutile.</p>
+          <p>Fort d'une expertise reconnue dans le domaine réglementaire (Code de la Construction, Code du travail, arrêtés sectoriels), nous intervenons avec un regard objectif et indépendant de tout fabricant ou installateur d'équipements.</p>
+          <div class="about__values">
+            <div class="about__value"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg><span><strong>Indépendance</strong> — Aucun conflit d'intérêt avec les fournisseurs d'équipements</span></div>
+            <div class="about__value"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg><span><strong>Expertise</strong> — Maîtrise complète du cadre réglementaire français</span></div>
+            <div class="about__value"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg><span><strong>Pédagogie</strong> — Des recommandations claires et directement actionnables</span></div>
+            <div class="about__value"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg><span><strong>Réactivité</strong> — Réponse sous 24h, intervention rapide sur site</span></div>
+          </div>
+          <a href="#contact" class="btn btn--primary">Prendre rendez-vous</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section__header"><span class="section__tag">FAQ</span><h2 class="section__title" id="faq-title">Questions fréquentes</h2></div>
+        <div class="faq__list" role="list">
+          <div class="faq__item" role="listitem"><button class="faq__question" aria-expanded="false">Quels établissements sont soumis à la réglementation ERP ?<span class="faq__icon" aria-hidden="true">+</span></button><div class="faq__answer" hidden><p>Tout établissement qui reçoit des personnes extérieures (clients, usagers, visiteurs) est soumis à la réglementation ERP. Cela inclut les hôtels, restaurants, écoles, commerces, salles de spectacle, cliniques, gymnases, etc. Le classement dépend du type d'activité et du nombre de personnes accueillies.</p></div></div>
+          <div class="faq__item" role="listitem"><button class="faq__question" aria-expanded="false">À quelle fréquence dois-je organiser un exercice d'évacuation ?<span class="faq__icon" aria-hidden="true">+</span></button><div class="faq__answer" hidden><p>La réglementation prévoit au minimum <strong>deux exercices d'évacuation par an</strong> pour les établissements soumis à consigne de sécurité incendie. Le premier doit avoir lieu durant les 6 premiers mois suivant la prise de poste. Ces exercices doivent être consignés dans le registre de sécurité.</p></div></div>
+          <div class="faq__item" role="listitem"><button class="faq__question" aria-expanded="false">Que contient un registre de sécurité incendie ?<span class="faq__icon" aria-hidden="true">+</span></button><div class="faq__answer" hidden><p>Le registre de sécurité incendie doit comporter : la liste des contrôles et vérifications techniques réglementaires, les dates des formations du personnel, les comptes-rendus des exercices d'évacuation, les travaux réalisés, les avis et rapports des organismes de contrôle, et les visites de la commission de sécurité.</p></div></div>
+          <div class="faq__item" role="listitem"><button class="faq__question" aria-expanded="false">Quelles sanctions en cas de non-conformité incendie ?<span class="faq__icon" aria-hidden="true">+</span></button><div class="faq__answer" hidden><p>Les sanctions peuvent être graves : <strong>fermeture administrative</strong> de l'établissement, <strong>sanctions pénales</strong> pour l'exploitant (jusqu'à 1 an d'emprisonnement et 15 000€ d'amende pour mise en danger d'autrui), et une <strong>responsabilité civile et pénale</strong> engagée en cas d'accident.</p></div></div>
+          <div class="faq__item" role="listitem"><button class="faq__question" aria-expanded="false">Combien coûte un audit de sécurité incendie ?<span class="faq__icon" aria-hidden="true">+</span></button><div class="faq__answer" hidden><p>Le coût dépend de la superficie de l'établissement, de sa complexité et de la distance d'intervention. Nous proposons un <strong>premier échange téléphonique gratuit</strong> pour évaluer vos besoins et vous fournir une proposition tarifaire transparente sous 24h.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact__inner">
+        <div class="contact__info">
+          <span class="section__tag">Contactez-nous</span>
+          <h2 class="section__title" id="contact-title">Parlons de votre établissement</h2>
+          <p>Vous souhaitez un audit, une formation, un conseil réglementaire ou simplement une information ? Contactez-nous, nous répondons sous 24h.</p>
+          <div class="contact__details">
+            <div class="contact__detail"><div class="contact__detail-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg></div><div><strong>Téléphone</strong><span><a href="tel:+33781596364" style="color:var(--grey-mid)">+33 (0)7 81 59 63 64</a></span></div></div>
+            <div class="contact__detail"><div class="contact__detail-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><strong>Email</strong><span>contact@sam-incendie.fr</span></div></div>
+            <div class="contact__detail"><div class="contact__detail-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 00-8 8c0 5.25 8 14 8 14s8-8.75 8-14a8 8 0 00-8-8z"/></svg></div><div><strong>Zone d'intervention</strong><span>Île-de-France (Paris) et déplacements nationaux</span></div></div>
+            <div class="contact__detail"><div class="contact__detail-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div><div><strong>Délai de réponse</strong><span>Sous 24h ouvrées</span></div></div>
+          </div>
+        </div>
+        <div class="contact__form-wrapper">
+          <form class="contact__form" id="contactForm" novalidate aria-label="Formulaire de contact">
+            <h3 class="contact__form-title">Demande de devis gratuit</h3>
+            <div class="form__row">
+              <div class="form__group"><label for="nom" class="form__label">Nom <span aria-hidden="true">*</span></label><input type="text" id="nom" name="nom" class="form__input" placeholder="Votre nom" required autocomplete="name" /><span class="form__error" id="nom-error" role="alert"></span></div>
+              <div class="form__group"><label for="prenom" class="form__label">Prénom <span aria-hidden="true">*</span></label><input type="text" id="prenom" name="prenom" class="form__input" placeholder="Votre prénom" required autocomplete="given-name" /><span class="form__error" id="prenom-error" role="alert"></span></div>
+            </div>
+            <div class="form__row">
+              <div class="form__group"><label for="email" class="form__label">Email <span aria-hidden="true">*</span></label><input type="email" id="email" name="email" class="form__input" placeholder="votre@email.fr" required autocomplete="email" /><span class="form__error" id="email-error" role="alert"></span></div>
+              <div class="form__group"><label for="telephone" class="form__label">Téléphone</label><input type="tel" id="telephone" name="telephone" class="form__input" placeholder="06 XX XX XX XX" autocomplete="tel" /></div>
+            </div>
+            <div class="form__group">
+              <label for="etablissement" class="form__label">Type d'établissement <span aria-hidden="true">*</span></label>
+              <select id="etablissement" name="etablissement" class="form__input form__select" required>
+                <option value="">Sélectionnez votre type d'établissement</option>
+                <option value="hotel">Hôtel / Hébergement (Type O)</option>
+                <option value="restaurant">Restaurant / Débits de boissons (Type N)</option>
+                <option value="commerce">Commerce / Grande surface (Type M)</option>
+                <option value="ecole">École / Établissement d'enseignement (Type R)</option>
+                <option value="sante">Établissement de santé (Type J / U)</option>
+                <option value="bureau">Bureaux / Tertiaire (Type W)</option>
+                <option value="industrie">Industrie / Entrepôt (ICPE)</option>
+                <option value="collectivite">Collectivité / Équipement public</option>
+                <option value="autre">Autre</option>
+              </select>
+              <span class="form__error" id="etablissement-error" role="alert"></span>
+            </div>
+            <div class="form__group">
+              <label for="service" class="form__label">Service souhaité</label>
+              <select id="service" name="service" class="form__input form__select">
+                <option value="">Sélectionnez un service</option>
+                <option value="audit">Audit &amp; Diagnostic incendie</option>
+                <option value="conseil">Conseil réglementaire</option>
+                <option value="formation">Formation sécurité incendie</option>
+                <option value="information">Information réglementaire</option>
+                <option value="autre">Je ne sais pas encore</option>
+              </select>
+            </div>
+            <div class="form__group"><label for="message" class="form__label">Message <span aria-hidden="true">*</span></label><textarea id="message" name="message" class="form__input form__textarea" rows="4" placeholder="Décrivez votre établissement et vos besoins..." required></textarea><span class="form__error" id="message-error" role="alert"></span></div>
+            <div class="form__group form__group--checkbox">
+              <input type="checkbox" id="rgpd" name="rgpd" class="form__checkbox" required />
+              <label for="rgpd" class="form__label-check">J'accepte que mes données soient utilisées pour traiter ma demande conformément à notre politique de confidentialité. <span aria-hidden="true">*</span></label>
+              <span class="form__error" id="rgpd-error" role="alert"></span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
+              Envoyer ma demande
+            </button>
+            <div class="form__success" id="formSuccess" hidden role="status">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+              Merci ! Votre demande a bien été envoyée. Nous vous répondrons sous 24h.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#accueil" class="logo logo--light" aria-label="Sam Incendie - Accueil">
+          <span class="logo__name">Sam Incendie</span>
+          <span class="logo__tagline">Consultant &amp; Expert en Sécurité Incendie</span>
+        </a>
+        <p class="footer__desc">Cabinet de conseil indépendant en sécurité incendie pour les ERP et les entreprises. Paris – Île-de-France.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Navigation footer">
+        <div class="footer__col"><h4>Services</h4><ul><li><a href="#services">Information réglementaire</a></li><li><a href="#services">Conseil incendie</a></li><li><a href="#services">Audit &amp; Diagnostic</a></li><li><a href="#services">Formations</a></li></ul></div>
+        <div class="footer__col"><h4>Secteurs</h4><ul><li><a href="#secteurs">ERP</a></li><li><a href="#secteurs">Industrie &amp; ICPE</a></li><li><a href="#secteurs">Bureaux &amp; Tertiaire</a></li><li><a href="#secteurs">Collectivités</a></li></ul></div>
+        <div class="footer__col"><h4>Ressources</h4><ul><li><a href="#blog">Guides &amp; Articles</a></li><li><a href="#reglementation">Réglementation</a></li><li><a href="#faq">FAQ</a></li><li><a href="#about">À propos</a></li></ul></div>
+        <div class="footer__col"><h4>Contact</h4><ul><li><a href="mailto:contact@sam-incendie.fr">contact@sam-incendie.fr</a></li><li><a href="tel:+33781596364">07 81 59 63 64</a></li><li><a href="#contact">Devis gratuit</a></li></ul></div>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <span>© 2026 Sam Incendie — SIRET 819 209 461 00022 — Paris (75), IDF</span>
+        <span>Auto-entrepreneur · Tous droits réservés</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut de page" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="18,15 12,9 6,15"/></svg>
+  </button>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const burger=document.getElementById('burger'),nav=document.getElementById('nav'),header=document.getElementById('header');
+  if(burger&&nav){
+    burger.addEventListener('click',()=>{const o=nav.classList.toggle('open');burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',String(o));document.body.style.overflow=o?'hidden':''});
+    nav.querySelectorAll('.nav__link').forEach(l=>l.addEventListener('click',()=>{nav.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
+  }
+  window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>40),{passive:true});
+  const sections=document.querySelectorAll('section[id]'),navLinks=document.querySelectorAll('.nav__link[href^="#"]');
+  new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)navLinks.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-50% 0px -50% 0px'}).observe&&sections.forEach(s=>new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)navLinks.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-50% 0px -50% 0px'}).observe(s));
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.getElementById(a.getAttribute('href').slice(1));if(t){e.preventDefault();const top=t.getBoundingClientRect().top+window.scrollY-(header?header.offsetHeight:0)-8;window.scrollTo({top,behavior:'smooth'})}}));
+  const btt=document.getElementById('backToTop');
+  if(btt){window.addEventListener('scroll',()=>{const s=window.scrollY>400;btt.classList.toggle('visible',s);btt.hidden=!s},{passive:true});btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}))}
+  document.querySelectorAll('.faq__question').forEach(btn=>btn.addEventListener('click',()=>{
+    const item=btn.closest('.faq__item'),answer=item.querySelector('.faq__answer'),isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq__item.open').forEach(o=>{if(o!==item){o.classList.remove('open');o.querySelector('.faq__answer').hidden=true;o.querySelector('.faq__question').setAttribute('aria-expanded','false')}});
+    item.classList.toggle('open',!isOpen);answer.hidden=isOpen;btn.setAttribute('aria-expanded',String(!isOpen));
+  }));
+  const revealEls=document.querySelectorAll('.service-card,.secteur-card,.blog-card,.stat-card,.reglem__card,.process__step,.about__value,.faq__item');
+  revealEls.forEach(el=>el.classList.add('reveal'));
+  new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'}).observe&&revealEls.forEach(el=>new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'}).observe(el));
+  document.querySelectorAll('.stat-card__number').forEach(el=>new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){const target=parseInt(el.dataset.target,10),steps=60,step=1600/steps;let cur=0;const timer=setInterval(()=>{cur+=target/steps;if(cur>=target){el.textContent=target;clearInterval(timer)}else el.textContent=Math.floor(cur)},step)}}),{threshold:0.5}).observe(el));
+  const form=document.getElementById('contactForm');
+  if(form){
+    form.addEventListener('submit',e=>{e.preventDefault();if(validate())submit()});
+    form.querySelectorAll('.form__input').forEach(f=>{f.addEventListener('blur',()=>vField(f));f.addEventListener('input',()=>{if(f.classList.contains('error'))vField(f)})});
+  }
+  function vField(f){const id=f.id,v=f.value.trim(),err=document.getElementById(id+'-error');f.classList.remove('error');if(err)err.textContent='';if(f.required&&!v){f.classList.add('error');if(err)err.textContent='Ce champ est obligatoire.';return false}if(f.type==='email'&&v&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){f.classList.add('error');if(err)err.textContent='Adresse email invalide.';return false}return true}
+  function validate(){let ok=true;form.querySelectorAll('.form__input[required]').forEach(f=>{if(!vField(f))ok=false});const rgpd=document.getElementById('rgpd'),re=document.getElementById('rgpd-error');if(rgpd&&!rgpd.checked){if(re)re.textContent="Vous devez accepter notre politique de confidentialité.";ok=false}return ok}
+  function submit(){const btn=form.querySelector('[type="submit"]'),suc=document.getElementById('formSuccess');btn.disabled=true;btn.textContent='Envoi en cours…';setTimeout(()=>{form.querySelectorAll('.form__input,.form__checkbox').forEach(f=>{f.value='';f.checked=false});if(suc){suc.hidden=false;suc.scrollIntoView({behavior:'smooth',block:'nearest'})}btn.disabled=false;btn.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg> Envoyer ma demande'},1200)}
+});
+</script>
+  <script src="js/popup.js" defer></script>
+  <script src="js/chatbot.js" defer></script>
+</body>
+</html>
+
+

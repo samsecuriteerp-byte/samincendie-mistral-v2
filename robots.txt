@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://samincendie.fr/sitemap.xml
+
+# Crawl-delay conseillé pour éviter surcharge
+Crawl-delay: 2
+
+# Exclure fichiers inutiles pour le SEO
+Disallow: /node_modules/
+Disallow: /.claude/

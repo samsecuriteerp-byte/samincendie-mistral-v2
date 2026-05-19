@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#f0f3f8"/>
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1A2E4A"/>
+      <stop offset="100%" style="stop-color:#243d5c"/>
+    </linearGradient>
+    <linearGradient id="flame2" x1="0%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" style="stop-color:#C0392B"/>
+      <stop offset="100%" style="stop-color:#f39c12"/>
+    </linearGradient>
+  </defs>
+
+  <!-- White background -->
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+
+  <!-- Navy header band -->
+  <rect width="1200" height="200" fill="url(#headerGrad)"/>
+
+  <!-- Red accent bar top -->
+  <rect x="0" y="0" width="1200" height="6" fill="#C0392B"/>
+
+  <!-- Logo icon in header -->
+  <g transform="translate(60, 30) scale(1.8)">
+    <path d="M40 5L8 18v20c0 18.7 13.6 36.2 31.8 40.7C58.2 79.2 72 61.7 72 41V18L40 5z"
+          fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+    <path d="M40 24c-3 4-4 8-3 12s4 7 3 11c4-3 6-7 5-11 3 2 4 6 3 10 3-4 3-10-1-14-1 2-2 4-2 6-2-4-3-9.5-5-14z"
+          fill="url(#flame2)"/>
+  </g>
+
+  <!-- Site name in header -->
+  <text x="210" y="95" font-family="Arial Black, sans-serif" font-size="52" font-weight="900" fill="white">Sam Incendie</text>
+  <text x="212" y="142" font-family="Arial, sans-serif" font-size="22" fill="rgba(255,255,255,0.65)" letter-spacing="1">Consultant &amp; Expert en Sécurité Incendie</text>
+
+  <!-- Main content area -->
+  <!-- Left column: big icon -->
+  <circle cx="210" cy="400" r="120" fill="#1A2E4A" opacity="0.06"/>
+  <!-- Large flame icon -->
+  <g transform="translate(150, 290) scale(3)">
+    <path d="M20 2c-3 5-4 10-3 15s4 8.5 3 13.5c5-3.5 7.5-8.5 6.5-13.5 3.5 2.5 4.5 7.5 3.5 12.5 3.5-5 3.5-12.5-.5-17.5-1.5 2.5-2.5 5-2.5 7.5-2.5-5-4-11-7-17.5z"
+          fill="url(#flame2)" opacity="0.9"/>
+  </g>
+
+  <!-- Right column: page title + description -->
+  <text x="390" y="290" font-family="Arial Black, sans-serif" font-size="44" font-weight="900" fill="#1A2E4A" textLength="750" lengthAdjust="spacing">Réglementation</text>
+  <text x="390" y="348" font-family="Arial Black, sans-serif" font-size="44" font-weight="900" fill="#C0392B">Sécurité Incendie</text>
+
+  <text x="390" y="400" font-family="Arial, sans-serif" font-size="20" fill="#4a5568">ERP · IGH · HAB · BUP · ICPE</text>
+  <text x="390" y="435" font-family="Arial, sans-serif" font-size="20" fill="#4a5568">Textes réglementaires officiels à jour 2026</text>
+
+  <!-- Tag chips -->
+  <rect x="390" y="465" width="100" height="32" rx="16" fill="#C0392B"/>
+  <text x="440" y="486" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white" text-anchor="middle">Gratuit</text>
+
+  <rect x="502" y="465" width="150" height="32" rx="16" fill="#1A2E4A"/>
+  <text x="577" y="486" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white" text-anchor="middle">Mis à jour 2026</text>
+
+  <rect x="664" y="465" width="170" height="32" rx="16" fill="#1A2E4A"/>
+  <text x="749" y="486" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="white" text-anchor="middle">Accès immédiat</text>
+
+  <!-- Bottom URL bar -->
+  <rect x="0" y="580" width="1200" height="50" fill="#1A2E4A"/>
+  <text x="600" y="611" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.7)" text-anchor="middle" letter-spacing="2">samincendie.fr</text>
+</svg>

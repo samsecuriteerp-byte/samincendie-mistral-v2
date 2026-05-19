@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cours SSIAP 1/2/3, TFP APS, Réglementation Incendie | Sam Incendie</title>
+  <meta name="description" content="Préparez vos certifications SSIAP 1, SSIAP 2, SSIAP 3, TFP APS et MAC APS avec nos cours structurés, fiches synthèses et modules pédagogiques gratuits." />
+  <meta name="keywords" content="cours sécurité incendie, formation incendie gratuite, triangle du feu, classes de feux, ERP réglementation" />
+  <link rel="canonical" href="https://samincendie.fr/cours.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" /></noscript>
+  <link rel="preload" href="css/style.css" as="style" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preload" href="css/pages.css" as="style" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <style>
+    /* ── Cours page styles ── */
+    .cours-hero {
+      background: linear-gradient(135deg, #1A2E4A 0%, #0f1e30 100%);
+      padding: 80px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cours-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: #F4F6F8;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .cours-hero__inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+    }
+    .cours-hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(192,57,43,.2);
+      color: #ff8070;
+      border: 1px solid rgba(192,57,43,.3);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .cours-hero h1 {
+      color: #fff;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .cours-hero h1 span { color: #e74c3c; }
+    .cours-hero p {
+      color: rgba(255,255,255,.75);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin-bottom: 28px;
+    }
+    .cours-hero__stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .cours-hero__stat {
+      text-align: center;
+    }
+    .cours-hero__stat strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .cours-hero__stat span {
+      font-size: .8rem;
+      color: rgba(255,255,255,.6);
+    }
+    .search-bar {
+      display: flex;
+      max-width: 560px;
+      background: #fff;
+      border-radius: 50px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.2);
+    }
+    .search-bar input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 14px 20px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: .95rem;
+      color: #2C3E50;
+    }
+    .search-bar button {
+      background: #C0392B;
+      border: none;
+      padding: 14px 24px;
+      cursor: pointer;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: .9rem;
+      transition: background .2s;
+    }
+    .search-bar button:hover { background: #962d22; }
+
+    /* ── Filter tabs ── */
+    .filter-section {
+      background: #F4F6F8;
+      padding: 32px 0;
+      position: sticky;
+      top: 70px;
+      z-index: 100;
+      border-bottom: 1px solid #d5dce6;
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .filter-tab {
+      padding: 9px 20px;
+      border-radius: 50px;
+      border: 2px solid #d5dce6;
+      background: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .85rem;
+      font-weight: 600;
+      color: #6c7a89;
+      cursor: pointer;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+    .filter-tab:hover {
+      border-color: #1A2E4A;
+      color: #1A2E4A;
+    }
+    .filter-tab.active {
+      background: #1A2E4A;
+      border-color: #1A2E4A;
+      color: #fff;
+    }
+    .filter-tab[data-cat="ssiap1"].active { background: #C0392B; border-color: #C0392B; }
+    .filter-tab[data-cat="ssiap2"].active { background: #E67E22; border-color: #E67E22; }
+    .filter-tab[data-cat="ssiap3"].active { background: #1A2E4A; border-color: #1A2E4A; }
+    .filter-tab[data-cat="aps"].active    { background: #27AE60; border-color: #27AE60; }
+    .filter-tab[data-cat="reglem"].active { background: #8E44AD; border-color: #8E44AD; }
+
+    /* ── Course grid ── */
+    .cours-grid {
+      padding: 56px 0;
+    }
+    .cours-grid__inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    /* ── Cours card ── */
+    .cours-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(26,46,74,.08);
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+      border: 1px solid #e8ecf0;
+      display: flex;
+      flex-direction: column;
+    }
+    .cours-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(26,46,74,.14);
+    }
+    .cours-card__header {
+      padding: 24px 24px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .cours-card__icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .icon--ssiap1 { background: rgba(192,57,43,.1); }
+    .icon--ssiap2 { background: rgba(230,126,34,.1); }
+    .icon--ssiap3 { background: rgba(26,46,74,.1); }
+    .icon--aps    { background: rgba(39,174,96,.1); }
+    .icon--reglem { background: rgba(142,68,173,.1); }
+    .icon--evacuation { background: rgba(52,152,219,.1); }
+
+    .cours-card__meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .cours-card__cat {
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      padding: 3px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      width: fit-content;
+    }
+    .cat--ssiap1 { background: rgba(192,57,43,.1); color: #C0392B; }
+    .cat--ssiap2 { background: rgba(230,126,34,.1); color: #d06b12; }
+    .cat--ssiap3 { background: rgba(26,46,74,.12); color: #1A2E4A; }
+    .cat--aps    { background: rgba(39,174,96,.1);  color: #1e8449; }
+    .cat--reglem { background: rgba(142,68,173,.1); color: #7d3c98; }
+    .cat--evacuation { background: rgba(52,152,219,.1); color: #2471a3; }
+
+    .cours-card__difficulty {
+      font-size: .72rem;
+      font-weight: 600;
+      color: #6c7a89;
+    }
+    .diff--debutant { color: #27AE60; }
+    .diff--intermediaire { color: #E67E22; }
+    .diff--avance { color: #C0392B; }
+
+    .cours-card__body {
+      padding: 16px 24px;
+      flex: 1;
+    }
+    .cours-card__title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1A2E4A;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .cours-card__desc {
+      font-size: .88rem;
+      color: #6c7a89;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .cours-card__modules {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .module-tag {
+      font-size: .72rem;
+      background: #F4F6F8;
+      color: #2C3E50;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid #e0e6ed;
+    }
+    .cours-card__footer {
+      padding: 0 24px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .cours-card__info {
+      display: flex;
+      gap: 16px;
+    }
+    .cours-card__info span {
+      font-size: .78rem;
+      color: #6c7a89;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .btn--cours {
+      padding: 8px 18px;
+      font-size: .82rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      border: 2px solid #1A2E4A;
+      color: #1A2E4A;
+      background: transparent;
+      text-decoration: none;
+      transition: all .2s;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .btn--cours:hover {
+      background: #1A2E4A;
+      color: #fff;
+    }
+    .btn--cours.btn--start {
+      background: #C0392B;
+      border-color: #C0392B;
+      color: #fff;
+    }
+    .btn--cours.btn--start:hover {
+      background: #962d22;
+      border-color: #962d22;
+    }
+
+    /* ── Featured module ── */
+    .featured-module {
+      background: linear-gradient(135deg, #1A2E4A 0%, #253d61 100%);
+      border-radius: 20px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 56px;
+    }
+    .featured-module__tag {
+      display: inline-block;
+      background: rgba(192,57,43,.3);
+      color: #ff8070;
+      border: 1px solid rgba(192,57,43,.4);
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .featured-module h2 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .featured-module p {
+      color: rgba(255,255,255,.7);
+      font-size: .95rem;
+      margin-bottom: 20px;
+    }
+    .featured-module__pills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .featured-module__pills span {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.15);
+      color: rgba(255,255,255,.85);
+      font-size: .78rem;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .featured-module__image {
+      width: 160px;
+      height: 160px;
+      background: rgba(255,255,255,.08);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      flex-shrink: 0;
+    }
+
+    /* ── Resources section ── */
+    .ressources-section {
+      background: #F4F6F8;
+      padding: 56px 0;
+    }
+    .ressources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 36px;
+    }
+    .ressource-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #e0e6ed;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .ressource-card:hover {
+      box-shadow: 0 4px 20px rgba(26,46,74,.1);
+      transform: translateY(-2px);
+    }
+    .ressource-card__icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+    .ressource-card__icon--pdf { background: rgba(192,57,43,.1); }
+    .ressource-card__icon--video { background: rgba(26,46,74,.1); }
+    .ressource-card__icon--quiz { background: rgba(39,174,96,.1); }
+    .ressource-card__title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      color: #1A2E4A;
+    }
+    .ressource-card__meta {
+      font-size: .78rem;
+      color: #6c7a89;
+    }
+    .ressource-card a {
+      font-size: .82rem;
+      font-weight: 600;
+      color: #C0392B;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: auto;
+    }
+    .ressource-card a:hover { color: #962d22; }
+
+    /* ── Progression banner ── */
+    .progression-banner {
+      background: linear-gradient(90deg, #C0392B 0%, #e74c3c 100%);
+      padding: 40px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 56px 0;
+    }
+    .progression-banner h3 {
+      color: #fff;
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+    .progression-banner p {
+      color: rgba(255,255,255,.8);
+      font-size: .9rem;
+    }
+    .btn--white {
+      background: #fff;
+      color: #C0392B;
+      border: 2px solid #fff;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: .9rem;
+      text-decoration: none;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+    .btn--white:hover {
+      background: transparent;
+      color: #fff;
+    }
+
+    /* Modal cours */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.6);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+    }
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal {
+      background: #fff;
+      border-radius: 20px;
+      max-width: 680px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: translateY(20px);
+      transition: transform .3s;
+    }
+    .modal-overlay.open .modal {
+      transform: translateY(0);
+    }
+    .modal__header {
+      background: linear-gradient(135deg, #1A2E4A, #253d61);
+      padding: 28px 32px;
+      border-radius: 20px 20px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .modal__header h2 { color: #fff; font-size: 1.3rem; }
+    .modal__header p { color: rgba(255,255,255,.7); font-size: .85rem; margin-top: 4px; }
+    .modal__close {
+      background: rgba(255,255,255,.15);
+      border: none;
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .modal__body { padding: 32px; }
+    .module-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .module-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      background: #F4F6F8;
+      border-radius: 10px;
+      border: 1px solid #e0e6ed;
+      font-size: .9rem;
+      color: #2C3E50;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .module-list li:hover { background: #e8ecf0; }
+    .module-list li .module-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #1A2E4A;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .module-list li .module-duration {
+      margin-left: auto;
+      font-size: .75rem;
+      color: #6c7a89;
+    }
+
+    /* Hidden cards for filter */
+    .cours-card.hidden { display: none; }
+
+    @media (max-width: 768px) {
+      .cours-hero__inner { grid-template-columns: 1fr; }
+      .cours-hero__stats { display: none; }
+      .featured-module { grid-template-columns: 1fr; }
+      .featured-module__image { display: none; }
+      .progression-banner { flex-direction: column; text-align: center; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://samincendie.fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cours",
+      "item": "https://samincendie.fr/cours.html"
+    }
+  ]
+}
+  </script>
+  <link rel="stylesheet" href="css/chatbot.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Sam Incendie - Accueil">
+        <span class="logo__icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 40 40" fill="none"><path d="M20 3L4 10v10c0 9.4 6.8 18.2 16 20.4C29.2 38.2 36 29.4 36 20V10L20 3z" fill="#1A2E4A"/><path d="M20 3L4 10v10c0 9.4 6.8 18.2 16 20.4" fill="#C0392B" opacity="0.85"/><path d="M20 12c-1.5 2-2 4-1.5 6s2 3.5 1.5 5.5c2-1.5 3-3.5 2.5-5.5 1.5 1 2 3 1.5 5 1.5-2 1.5-5-0.5-7-0.5 1-1 2-1 3-1-2-1.5-4.5-2.5-7z" fill="white"/></svg>
+        </span>
+        <span class="logo__text">
+          <span class="logo__name">Sam Incendie</span>
+          <span class="logo__tagline">Consultant &amp; Expert en Sécurité Incendie</span>
+        </span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="index.html#services" class="nav__link">Services</a></li>
+          <li><a href="cours.html" class="nav__link nav__link--active">Cours</a></li>
+          <li><a href="exercices.html" class="nav__link">Exercices</a></li>
+          <li><a href="actualites.html" class="nav__link">Actualités</a></li>
+          <li><a href="reglementation.html" class="nav__link">Réglementation</a></li>
+          <li><a href="index.html#blog" class="nav__link">Ressources</a></li>
+          <li><a href="index.html#about" class="nav__link">À propos</a></li>
+          <li><a href="produits.html" class="nav__link">Produits</a></li>
+          <li><a href="index.html#contact" class="nav__link nav__link--cta">Devis gratuit</a></li>
+        </ul>
+      </nav>
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="cours-hero">
+      <div class="container">
+        <div class="cours-hero__inner">
+          <div>
+            <div class="cours-hero__badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              Plateforme pédagogique
+            </div>
+            <h1>Cours <span>SSIAP · TFP APS</span><br/>& Réglementation</h1>
+            <p>Préparez vos certifications avec des modules structurés, des fiches synthèses téléchargeables et des quiz d'auto-évaluation.</p>
+            <form class="search-bar" onsubmit="return false;" role="search" aria-label="Rechercher un cours">
+              <input type="search" id="courseSearch" placeholder="Rechercher un cours, un thème..." aria-label="Rechercher" />
+              <button type="submit">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                Chercher
+              </button>
+            </form>
+          </div>
+          <div class="cours-hero__stats" aria-hidden="true">
+            <div class="cours-hero__stat">
+              <strong>6</strong>
+              <span>Certifications</span>
+            </div>
+            <div class="cours-hero__stat">
+              <strong>40+</strong>
+              <span>Modules</span>
+            </div>
+            <div class="cours-hero__stat">
+              <strong>100%</strong>
+              <span>Gratuit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FILTRES ===================== -->
+    <section class="filter-section" aria-label="Filtres par certification">
+      <div class="container">
+        <div class="filter-tabs" role="list" aria-label="Filtrer les cours">
+          <button class="filter-tab active" data-cat="all" role="listitem">Tous les cours</button>
+          <button class="filter-tab" data-cat="ssiap1" role="listitem">&#x1F534; SSIAP 1</button>
+          <button class="filter-tab" data-cat="ssiap2" role="listitem">&#x1F7E0; SSIAP 2</button>
+          <button class="filter-tab" data-cat="ssiap3" role="listitem">&#x1F535; SSIAP 3</button>
+          <button class="filter-tab" data-cat="aps" role="listitem">&#x1F7E2; TFP APS / MAC APS</button>
+          <button class="filter-tab" data-cat="reglem" role="listitem">&#x1F7E3; Réglementation ERP</button>
+          <button class="filter-tab" data-cat="evacuation" role="listitem">&#x1F537; Évacuation & SSI</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODULE VEDETTE ===================== -->
+    <section style="padding: 48px 0 0;">
+      <div class="container">
+        <div class="featured-module" role="region" aria-label="Module du moment">
+          <div>
+            <div class="featured-module__tag">⭐ Module du moment</div>
+            <h2>SSIAP 1 — Fondamentaux du service de sécurité incendie</h2>
+            <p>Le module de référence pour démarrer votre parcours SSIAP. Réglementation, rôles, alarmes, extinction — tout ce qu'un agent doit maîtriser avant son examen.</p>
+            <div class="featured-module__pills">
+              <span>&#x1F4CB; 8 modules</span>
+              <span>⏱ ~6h de contenu</span>
+              <span>&#x1F4C4; 3 fiches PDF</span>
+              <span>✅ Quiz inclus</span>
+            </div>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <button class="btn--cours btn--start" onclick="openModal('ssiap1-fondamentaux')">
+                ▶ Commencer ce module
+              </button>
+              <a href="exercices.html?exam=ssiap1" class="btn--cours" style="color:#fff; border-color:rgba(255,255,255,.4);">
+                &#x1F3AF; S'entraîner
+              </a>
+            </div>
+          </div>
+          <div class="featured-module__image" aria-hidden="true">&#x1F525;</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GRILLE COURS ===================== -->
+    <section class="cours-grid" id="coursGrid">
+      <div class="container">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:32px; flex-wrap:wrap; gap:12px;">
+          <div>
+            <h2 style="color:#1A2E4A; font-size:1.5rem; margin-bottom:4px;">Tous les cours disponibles</h2>
+            <p style="color:#6c7a89; font-size:.9rem;" id="coursCount">40 modules · mis à jour en 2026</p>
+          </div>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <label for="sortSelect" style="font-size:.85rem; color:#6c7a89; font-family:'Montserrat',sans-serif; font-weight:600;">Trier :</label>
+            <select id="sortSelect" style="padding:8px 14px; border:2px solid #d5dce6; border-radius:8px; font-family:'Open Sans',sans-serif; font-size:.85rem; color:#2C3E50; background:#fff; cursor:pointer;">
+              <option value="default">Par certification</option>
+              <option value="difficulty">Par difficulté</option>
+              <option value="duration">Par durée</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="cours-grid__inner" id="coursGridInner">
+
+          <!-- ── SSIAP 1 ── -->
+          <article class="cours-card" data-cat="ssiap1" data-difficulty="1" data-duration="90">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--ssiap1">&#x1F525;</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--ssiap1">SSIAP 1</span>
+                <span class="cours-card__difficulty diff--debutant">● Débutant</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Rôles et missions de l'agent SSIAP 1</h3>
+              <p class="cours-card__desc">Comprendre la mission, les responsabilités légales et le périmètre d'intervention d'un agent de service de sécurité incendie en ERP.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Mission réglementaire</span>
+                <span class="module-tag">Tenue de poste</span>
+                <span class="module-tag">Ronde de sécurité</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 4 modules</span>
+                <span>⏱ 1h30</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('ssiap1-roles')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <article class="cours-card" data-cat="ssiap1" data-difficulty="1" data-duration="60">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--ssiap1">&#x1F6A8;</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--ssiap1">SSIAP 1</span>
+                <span class="cours-card__difficulty diff--debutant">● Débutant</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Détection incendie et systèmes d'alarme</h3>
+              <p class="cours-card__desc">Fonctionnement du SSI (Système de Sécurité Incendie), catégories A à E, déclencheurs manuels, détecteurs automatiques et centrale.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">SSI catégories</span>
+                <span class="module-tag">DAS</span>
+                <span class="module-tag">Levée de doute</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 5 modules</span>
+                <span>⏱ 1h</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('ssiap1-detection')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <article class="cours-card" data-cat="ssiap1" data-difficulty="2" data-duration="75">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--ssiap1">&#x1F9EF;</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--ssiap1">SSIAP 1</span>
+                <span class="cours-card__difficulty diff--intermediaire">● Intermédiaire</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Extinction incendie : extincteurs & RIA</h3>
+              <p class="cours-card__desc">Types d'agents extincteurs, classes de feu (A, B, C, D, F), utilisation des extincteurs portatifs et des robinets d'incendie armés.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Classes de feu</span>
+                <span class="module-tag">Extincteurs eau/CO2/poudre</span>
+                <span class="module-tag">RIA 19/25mm</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 6 modules</span>
+                <span>⏱ 1h15</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('ssiap1-extinction')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <article class="cours-card" data-cat="ssiap1" data-difficulty="2" data-duration="60">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--ssiap1">&#x1F3C3;</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--ssiap1">SSIAP 1</span>
+                <span class="cours-card__difficulty diff--intermediaire">● Intermédiaire</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Conduite à tenir en cas d'incendie (SSIAP 1)</h3>
+              <p class="cours-card__desc">Procédures opérationnelles en cas de détection : alerte, attaque du feu, confinement, évacuation partielle ou totale selon la procédure P.A.S.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Procédure P.A.S.</span>
+                <span class="module-tag">Alerte pompiers</span>
+                <span class="module-tag">Gestion de crise</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 4 modules</span>
+                <span>⏱ 1h</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('ssiap1-conduite')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <article class="cours-card" data-cat="ssiap1" data-difficulty="1" data-duration="45">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--ssiap1">&#x1F4CB;</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--ssiap1">SSIAP 1</span>
+                <span class="cours-card__difficulty diff--debutant">● Débutant</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Registre de sécurité & main courante</h3>
+              <p class="cours-card__desc">Obligations documentaires de l'agent SSIAP 1 : tenue de la main courante, consignations, rapport de ronde et transmissions de poste.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Main courante</span>
+                <span class="module-tag">Rapport de ronde</span>
+                <span class="module-tag">Transmission</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 3 modules</span>
+                <span>⏱ 45min</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('ssiap1-registre')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <!-- ── SSIAP 2 ── -->
+          <article class="cours-card" data-cat="ssiap2" data-difficulty="2" data-duration="90">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--ssiap2">&#x1F465;</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--ssiap2">SSIAP 2</span>
+                <span class="cours-card__difficulty diff--intermediaire">● Intermédiaire</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Management d'une équipe SSIAP</h3>
+              <p class="cours-card__desc">Rôle du chef d'équipe : organisation du service, plannings, encadrement des agents SSIAP 1, délégation et communication opérationnelle.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Organisation d'équipe</span>
+                <span class="module-tag">Planning service</span>
+                <span class="module-tag">Brief / débrief</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 5 modules</span>
+                <span>⏱ 1h30</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('ssiap2-management')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <article class="cours-card" data-cat="ssiap2" data-difficulty="3" data-duration="90">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--ssiap2">&#x1F4E1;</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--ssiap2">SSIAP 2</span>
+                <span class="cours-card__difficulty diff--avance">● Avancé</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Gestion des alarmes & PC sécurité</h3>
+              <p class="cours-card__desc">Exploitation du poste central de sécurité (PCS), gestion des alarmes, levée de doute, coordination avec les services de secours extérieurs.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">PCS / PCSI</span>
+                <span class="module-tag">Gestion alarmes</span>
+                <span class="module-tag">Coordination secours</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 6 modules</span>
+                <span>⏱ 1h30</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('ssiap2-alarmes')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <article class="cours-card" data-cat="ssiap2" data-difficulty="2" data-duration="60">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--ssiap2">&#x1F4C4;</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--ssiap2">SSIAP 2</span>
+                <span class="cours-card__difficulty diff--intermediaire">● Intermédiaire</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Plans de masse & consignes de sécurité</h3>
+              <p class="cours-card__desc">Lecture des plans d'établissement, rédaction et mise à jour des consignes générales et particulières d'incendie selon la réglementation ERP.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Lecture de plans</span>
+                <span class="module-tag">Consignes générales</span>
+                <span class="module-tag">Consignes particulières</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 4 modules</span>
+                <span>⏱ 1h</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('ssiap2-plans')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <!-- ── SSIAP 3 ── -->
+          <article class="cours-card" data-cat="ssiap3" data-difficulty="3" data-duration="120">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--ssiap3">&#x1F3DB;️</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--ssiap3">SSIAP 3</span>
+                <span class="cours-card__difficulty diff--avance">● Avancé</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Direction d'un service de sécurité incendie</h3>
+              <p class="cours-card__desc">Responsabilités du chef de service SSIAP 3 : organisation globale, budgets, relations avec la direction et les autorités de contrôle.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Direction de service</span>
+                <span class="module-tag">Budget sécurité</span>
+                <span class="module-tag">Relations autorités</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 7 modules</span>
+                <span>⏱ 2h</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('ssiap3-direction')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <article class="cours-card" data-cat="ssiap3" data-difficulty="3" data-duration="90">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--ssiap3">&#x1F4CA;</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--ssiap3">SSIAP 3</span>
+                <span class="cours-card__difficulty diff--avance">● Avancé</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Analyse de risques & plans de prévention</h3>
+              <p class="cours-card__desc">Méthodes d'analyse des risques incendie, élaboration et mise à jour du plan de sécurité incendie (PSI) et du plan particulier de mise en sécurité.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Méthode HAZOP</span>
+                <span class="module-tag">PSI</span>
+                <span class="module-tag">PPMS</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 6 modules</span>
+                <span>⏱ 1h30</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('ssiap3-risques')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <!-- ── TFP APS ── -->
+          <article class="cours-card" data-cat="aps" data-difficulty="1" data-duration="60">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--aps">&#x1F6E1;️</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--aps">TFP APS</span>
+                <span class="cours-card__difficulty diff--debutant">● Débutant</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Réglementation sécurité privée & CNAPS</h3>
+              <p class="cours-card__desc">Cadre légal de la sécurité privée en France : loi n°83-629, activités autorisées, obligations des agents, rôle et pouvoirs du CNAPS.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Loi 83-629</span>
+                <span class="module-tag">CNAPS</span>
+                <span class="module-tag">Autorisations</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 4 modules</span>
+                <span>⏱ 1h</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('aps-reglementation')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <article class="cours-card" data-cat="aps" data-difficulty="1" data-duration="45">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--aps">&#x1F3AB;</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--aps">TFP APS</span>
+                <span class="cours-card__difficulty diff--debutant">● Débutant</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Carte professionnelle & agrément préalable</h3>
+              <p class="cours-card__desc">Conditions d'obtention, de renouvellement et de validité de la carte professionnelle APS. Procédure CNAPS, délais et pièces justificatives.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Carte pro APS</span>
+                <span class="module-tag">Agrément préalable</span>
+                <span class="module-tag">Renouvellement</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 3 modules</span>
+                <span>⏱ 45min</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('aps-carte')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <article class="cours-card" data-cat="aps" data-difficulty="2" data-duration="75">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--aps">&#x1F91D;</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--aps">TFP APS / MAC APS</span>
+                <span class="cours-card__difficulty diff--intermediaire">● Intermédiaire</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Techniques d'accueil, de surveillance et de prévention</h3>
+              <p class="cours-card__desc">Posture professionnelle, techniques de communication, gestion des visiteurs, filtrage, contrôle d'accès et prévention des incivilités.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Accueil & filtrage</span>
+                <span class="module-tag">Contrôle d'accès</span>
+                <span class="module-tag">Gestion conflits</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 5 modules</span>
+                <span>⏱ 1h15</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('aps-techniques')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <article class="cours-card" data-cat="aps" data-difficulty="2" data-duration="60">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--aps">⚠️</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--aps">TFP APS</span>
+                <span class="cours-card__difficulty diff--intermediaire">● Intermédiaire</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Gestion des risques & situations d'urgence</h3>
+              <p class="cours-card__desc">Identification et évaluation des risques, procédures d'urgence (malaise, intrusion, incendie), levée de doute et déclenchement des secours.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Risques identifiés</span>
+                <span class="module-tag">Procédures urgence</span>
+                <span class="module-tag">Premiers secours PSE1</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 4 modules</span>
+                <span>⏱ 1h</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('aps-risques')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <!-- ── Réglementation ERP ── -->
+          <article class="cours-card" data-cat="reglem" data-difficulty="1" data-duration="60">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--reglem">⚖️</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--reglem">Réglementation ERP</span>
+                <span class="cours-card__difficulty diff--debutant">● Débutant</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Classement ERP : types et catégories</h3>
+              <p class="cours-card__desc">Classification des établissements selon le CCH (Code de la Construction et de l'Habitation) : 15 types d'activités (J à Y) et 5 catégories selon l'effectif.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Types J à Y</span>
+                <span class="module-tag">1ère à 5e catégorie</span>
+                <span class="module-tag">Seuils d'effectif</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 4 modules</span>
+                <span>⏱ 1h</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('reglem-classement')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <article class="cours-card" data-cat="reglem" data-difficulty="2" data-duration="90">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--reglem">&#x1F3DB;️</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--reglem">Réglementation ERP</span>
+                <span class="cours-card__difficulty diff--intermediaire">● Intermédiaire</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Commission de sécurité : visite & obligations</h3>
+              <p class="cours-card__desc">Composition des commissions de sécurité, périodicité des visites selon le type d'ERP, déroulement de la visite et suites données aux avis.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Composition commission</span>
+                <span class="module-tag">Périodicité visites</span>
+                <span class="module-tag">Avis favorable/défavorable</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 5 modules</span>
+                <span>⏱ 1h30</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('reglem-commission')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <article class="cours-card" data-cat="reglem" data-difficulty="2" data-duration="75">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--reglem">&#x1F4DC;</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--reglem">Réglementation ERP</span>
+                <span class="cours-card__difficulty diff--intermediaire">● Intermédiaire</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Arrêté du 25 juin 1980 — Règlement de sécurité ERP</h3>
+              <p class="cours-card__desc">Présentation structurée du règlement de sécurité contre les risques d'incendie : dispositions générales (GE, MS, CH, DF) et dispositions particulières par type.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Règlement GE à DF</span>
+                <span class="module-tag">Dispositions particulières</span>
+                <span class="module-tag">Dérogations</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 6 modules</span>
+                <span>⏱ 1h15</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('reglem-arrete80')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <!-- ── Évacuation & SSI ── -->
+          <article class="cours-card" data-cat="evacuation" data-difficulty="1" data-duration="45">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--evacuation">&#x1F6AA;</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--evacuation">Évacuation & SSI</span>
+                <span class="cours-card__difficulty diff--debutant">● Débutant</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Organisation et conduite d'une évacuation</h3>
+              <p class="cours-card__desc">Principes de l'évacuation en ERP : guide-files, serre-files, points de rassemblement, personnes à mobilité réduite et compte-rendu d'évacuation.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Guide-files / serre-files</span>
+                <span class="module-tag">PMR</span>
+                <span class="module-tag">Point de rassemblement</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 3 modules</span>
+                <span>⏱ 45min</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('evac-organisation')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <article class="cours-card" data-cat="evacuation" data-difficulty="2" data-duration="60">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--evacuation">&#x1F4A8;</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--evacuation">Évacuation & SSI</span>
+                <span class="cours-card__difficulty diff--intermediaire">● Intermédiaire</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Désenfumage : principes et équipements</h3>
+              <p class="cours-card__desc">Rôle du désenfumage dans la sécurité incendie, types d'installations (naturel/mécanique), déclenchement des DAS et vérifications périodiques.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Désenfumage naturel</span>
+                <span class="module-tag">VMC-S / VMC double flux</span>
+                <span class="module-tag">DAS / volets coupe-feu</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 4 modules</span>
+                <span>⏱ 1h</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('evac-desenfumage')">Ouvrir →</button>
+            </div>
+          </article>
+
+          <article class="cours-card" data-cat="evacuation" data-difficulty="2" data-duration="75">
+            <div class="cours-card__header">
+              <div class="cours-card__icon icon--evacuation">&#x1F527;</div>
+              <div class="cours-card__meta">
+                <span class="cours-card__cat cat--evacuation">Évacuation & SSI</span>
+                <span class="cours-card__difficulty diff--intermediaire">● Intermédiaire</span>
+              </div>
+            </div>
+            <div class="cours-card__body">
+              <h3 class="cours-card__title">Maintenance et vérifications des équipements SSI</h3>
+              <p class="cours-card__desc">Obligations de vérification des systèmes de sécurité incendie : SSI, extincteurs, RIA, colonnes sèches. Fréquences, prestataires agréés et documents.</p>
+              <div class="cours-card__modules">
+                <span class="module-tag">Vérifications annuelles</span>
+                <span class="module-tag">APSAD</span>
+                <span class="module-tag">Registre de sécurité</span>
+              </div>
+            </div>
+            <div class="cours-card__footer">
+              <div class="cours-card__info">
+                <span>&#x1F4DA; 5 modules</span>
+                <span>⏱ 1h15</span>
+              </div>
+              <button class="btn--cours btn--start" onclick="openModal('evac-maintenance')">Ouvrir →</button>
+            </div>
+          </article>
+
+        </div><!-- /cours-grid__inner -->
+
+        <!-- ── Bannière progression ── -->
+        <div class="progression-banner" role="complementary" aria-label="Espace membre">
+          <div>
+            <h3>&#x1F4CA; Suivez votre progression</h3>
+            <p>Créez un compte gratuit pour sauvegarder vos avancées, accéder aux fiches PDF et débloquer les quiz d'entraînement.</p>
+          </div>
+          <a href="index.html#contact" class="btn--white">Accès espace membre →</a>
+        </div>
+
+      </div>
+    </section><!-- /cours-grid -->
+
+    <!-- ===================== RESSOURCES PDF ===================== -->
+    <section class="ressources-section" aria-labelledby="ressources-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">Téléchargements</span>
+          <h2 class="section__title" id="ressources-title">Fiches synthèses & Ressources</h2>
+          <p class="section__lead">Des fiches mémo téléchargeables gratuitement pour réviser l'essentiel avant votre examen.</p>
+        </div>
+        <div class="ressources-grid">
+
+          <div class="ressource-card">
+            <div class="ressource-card__icon ressource-card__icon--pdf">&#x1F4C4;</div>
+            <div class="ressource-card__title">Fiche mémo SSIAP 1</div>
+            <div class="ressource-card__meta">PDF · 4 pages · Mis à jour 2026</div>
+            <p style="font-size:.82rem; color:#6c7a89; line-height:1.5;">Récapitulatif complet des missions, procédures et réglementation pour l'agent SSIAP 1.</p>
+            <a href="index.html#contact">&#x1F4E5; Télécharger gratuitement →</a>
+          </div>
+
+          <div class="ressource-card">
+            <div class="ressource-card__icon ressource-card__icon--pdf">&#x1F4C4;</div>
+            <div class="ressource-card__title">Fiche mémo Classes de feu</div>
+            <div class="ressource-card__meta">PDF · 2 pages · Mis à jour 2026</div>
+            <p style="font-size:.82rem; color:#6c7a89; line-height:1.5;">Classes A, B, C, D, F — agents extincteurs adaptés — tableau récapitulatif à afficher.</p>
+            <a href="index.html#contact">&#x1F4E5; Télécharger gratuitement →</a>
+          </div>
+
+          <div class="ressource-card">
+            <div class="ressource-card__icon ressource-card__icon--pdf">&#x1F4C4;</div>
+            <div class="ressource-card__title">Classement ERP — Types & Catégories</div>
+            <div class="ressource-card__meta">PDF · 3 pages · Mis à jour 2026</div>
+            <p style="font-size:.82rem; color:#6c7a89; line-height:1.5;">Tableau complet des 15 types d'ERP, seuils d'effectif et obligations réglementaires associées.</p>
+            <a href="index.html#contact">&#x1F4E5; Télécharger gratuitement →</a>
+          </div>
+
+          <div class="ressource-card">
+            <div class="ressource-card__icon ressource-card__icon--pdf">&#x1F4C4;</div>
+            <div class="ressource-card__title">Fiche mémo TFP APS / MAC APS</div>
+            <div class="ressource-card__meta">PDF · 4 pages · Mis à jour 2026</div>
+            <p style="font-size:.82rem; color:#6c7a89; line-height:1.5;">Cadre légal, CNAPS, carte professionnelle, missions autorisées — essentiel pour l'examen APS.</p>
+            <a href="index.html#contact">&#x1F4E5; Télécharger gratuitement →</a>
+          </div>
+
+          <div class="ressource-card">
+            <div class="ressource-card__icon ressource-card__icon--quiz">&#x1F3AF;</div>
+            <div class="ressource-card__title">Quiz SSIAP 1 — 50 questions</div>
+            <div class="ressource-card__meta">Interactif · Niveau débutant à avancé</div>
+            <p style="font-size:.82rem; color:#6c7a89; line-height:1.5;">50 QCM sur les fondamentaux SSIAP 1 avec corrections détaillées et conseils d'examen.</p>
+            <a href="exercices.html?exam=ssiap1">&#x1F3AF; Accéder au quiz →</a>
+          </div>
+
+          <div class="ressource-card">
+            <div class="ressource-card__icon ressource-card__icon--pdf">&#x1F4C4;</div>
+            <div class="ressource-card__title">Signalétique incendie ISO 7010</div>
+            <div class="ressource-card__meta">PDF · 2 pages · Norme 2026</div>
+            <p style="font-size:.82rem; color:#6c7a89; line-height:1.5;">Panneaux obligatoires, couleurs réglementaires et distances d'affichage selon la norme ISO 7010.</p>
+            <a href="blog-signaletique-incendie.html">&#x1F4D6; Lire l'article →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA FINAL ===================== -->
+    <section style="padding: 56px 0; background: #fff;">
+      <div class="container">
+        <div style="text-align:center; max-width: 600px; margin: 0 auto;">
+          <span class="section__tag">Un projet de formation ?</span>
+          <h2 class="section__title">Besoin d'une formation sur mesure pour votre équipe ?</h2>
+          <p style="color:#6c7a89; margin-bottom:28px;">Sam Incendie propose des sessions de formation adaptées à votre établissement : EPI, sensibilisation, SSIAP, évacuation. Devis sous 24h.</p>
+          <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+            <a href="index.html#contact" class="btn btn--primary btn--lg">Demander un devis formation</a>
+            <a href="formations.html" class="btn btn--outline" style="color:#1A2E4A; border-color:#1A2E4A;">Voir les formations →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="logo logo--light">
+          <span class="logo__name">Sam Incendie</span>
+          <span class="logo__tagline">Consultant &amp; Expert en Sécurité Incendie</span>
+        </a>
+        <p class="footer__desc">Cabinet de conseil indépendant en sécurité incendie pour les ERP et les entreprises.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Navigation footer">
+        <div class="footer__col">
+          <h4>Cours</h4>
+          <ul>
+            <li><a href="cours.html?cat=ssiap1">SSIAP 1</a></li>
+            <li><a href="cours.html?cat=ssiap2">SSIAP 2</a></li>
+            <li><a href="cours.html?cat=ssiap3">SSIAP 3</a></li>
+            <li><a href="cours.html?cat=aps">TFP APS / MAC APS</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#information">Information réglementaire</a></li>
+            <li><a href="audit.html">Audit & Diagnostic</a></li>
+            <li><a href="formations.html">Formations</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Ressources</h4>
+          <ul>
+            <li><a href="exercices.html">Exercices & QCM</a></li>
+            <li><a href="actualites.html">Actualités</a></li>
+            <li><a href="index.html#blog">Blog & Guides</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:contact@samincendie.fr">contact@samincendie.fr</a></li>
+            <li><a href="tel:+33781596364">+33 (0)7 81 59 63 64</a></li>
+            <li><a href="index.html#contact">Devis gratuit</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <span>© 2026 Sam Incendie — Tous droits réservés</span>
+        <span><a href="mentions-legales.html">Mentions légales</a> · <a href="mentions-legales.html#confidentialite">Confidentialité</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== MODAL COURS ===================== -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal" id="modalContent">
+      <div class="modal__header">
+        <div>
+          <h2 id="modalTitle">Modules du cours</h2>
+          <p id="modalSubtitle">Choisissez un module pour commencer</p>
+        </div>
+        <button class="modal__close" onclick="closeModal()" aria-label="Fermer">✕</button>
+      </div>
+      <div class="modal__body" id="modalBody">
+        <!-- Contenu dynamique -->
+      </div>
+    </div>
+  </div>
+
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18,15 12,9 6,15"/></svg>
+  </button>
+
+  <script src="js/main.js" defer></script>
+  <script>
+  // ── Données des cours ──
+  const coursData = {
+    'ssiap1-roles': {
+      title: 'Rôles et missions de l\'agent SSIAP 1',
+      cat: 'SSIAP 1',
+      modules: [
+        { num: 1, title: 'Cadre réglementaire du métier SSIAP', duration: '25 min' },
+        { num: 2, title: 'Tenue de poste et rondes de sécurité', duration: '30 min' },
+        { num: 3, title: 'Communication et transmission', duration: '20 min' },
+        { num: 4, title: 'Déontologie et obligations légales', duration: '15 min' },
+      ]
+    },
+    'ssiap1-detection': {
+      title: 'Détection incendie et systèmes d\'alarme',
+      cat: 'SSIAP 1',
+      modules: [
+        { num: 1, title: 'Introduction au SSI — Catégories A à E', duration: '15 min' },
+        { num: 2, title: 'Déclencheurs manuels et détecteurs automatiques', duration: '20 min' },
+        { num: 3, title: 'Centrale de mise en sécurité incendie (CMSI)', duration: '20 min' },
+        { num: 4, title: 'Dispositifs Actionnés de Sécurité (DAS)', duration: '15 min' },
+        { num: 5, title: 'Procédures de levée de doute', duration: '20 min' },
+      ]
+    },
+    'ssiap1-extinction': {
+      title: 'Extinction incendie : extincteurs & RIA',
+      cat: 'SSIAP 1',
+      modules: [
+        { num: 1, title: 'Le feu : triangle et tétraèdre du feu', duration: '15 min' },
+        { num: 2, title: 'Classes de feu A, B, C, D, F', duration: '15 min' },
+        { num: 3, title: 'Extincteurs eau, CO₂, poudre, halon', duration: '20 min' },
+        { num: 4, title: 'Utilisation pratique d\'un extincteur', duration: '20 min' },
+        { num: 5, title: 'Robinets d\'Incendie Armés (RIA)', duration: '15 min' },
+        { num: 6, title: 'Colonnes sèches et humides', duration: '10 min' },
+      ]
+    },
+    'ssiap1-conduite': {
+      title: 'Conduite à tenir en cas d\'incendie',
+      cat: 'SSIAP 1',
+      modules: [
+        { num: 1, title: 'Procédure P.A.S. : Protéger, Alerter, Secourir', duration: '20 min' },
+        { num: 2, title: 'Donner l\'alerte : 18, 15, 17, 112', duration: '15 min' },
+        { num: 3, title: 'Attaquer le feu ou se replier', duration: '15 min' },
+        { num: 4, title: 'Accueil des pompiers — point de commandement', duration: '20 min' },
+      ]
+    },
+    'ssiap1-registre': {
+      title: 'Registre de sécurité & main courante',
+      cat: 'SSIAP 1',
+      modules: [
+        { num: 1, title: 'Obligations de consignation réglementaires', duration: '15 min' },
+        { num: 2, title: 'Rédiger un rapport de ronde', duration: '15 min' },
+        { num: 3, title: 'Transmission de poste : bonnes pratiques', duration: '15 min' },
+      ]
+    },
+    'ssiap1-fondamentaux': {
+      title: 'SSIAP 1 — Fondamentaux complets',
+      cat: 'SSIAP 1',
+      modules: [
+        { num: 1, title: 'Rôles et missions de l\'agent SSIAP 1', duration: '30 min' },
+        { num: 2, title: 'Réglementation et cadre légal', duration: '25 min' },
+        { num: 3, title: 'Détection et systèmes d\'alarme', duration: '25 min' },
+        { num: 4, title: 'Classes de feu et agents extincteurs', duration: '20 min' },
+        { num: 5, title: 'Procédures d\'urgence — P.A.S.', duration: '20 min' },
+        { num: 6, title: 'Évacuation et gestion des personnes', duration: '20 min' },
+        { num: 7, title: 'Registre, main courante et documentation', duration: '15 min' },
+        { num: 8, title: 'Quiz de validation — 20 questions', duration: '20 min' },
+      ]
+    },
+    'aps-reglementation': {
+      title: 'Réglementation sécurité privée & CNAPS',
+      cat: 'TFP APS',
+      modules: [
+        { num: 1, title: 'Historique et loi n°83-629 du 12 juillet 1983', duration: '20 min' },
+        { num: 2, title: 'Le CNAPS : rôle, missions et pouvoirs', duration: '20 min' },
+        { num: 3, title: 'Activités autorisées et interdites', duration: '15 min' },
+        { num: 4, title: 'Obligations des entreprises et des agents', duration: '15 min' },
+      ]
+    },
+    'aps-carte': {
+      title: 'Carte professionnelle & agrément préalable',
+      cat: 'TFP APS',
+      modules: [
+        { num: 1, title: 'Conditions d\'obtention de la carte pro', duration: '15 min' },
+        { num: 2, title: 'Procédure CNAPS : dossier et délais', duration: '20 min' },
+        { num: 3, title: 'Renouvellement et validité', duration: '10 min' },
+      ]
+    },
+    'reglem-classement': {
+      title: 'Classement ERP : types et catégories',
+      cat: 'Réglementation ERP',
+      modules: [
+        { num: 1, title: 'Introduction à la réglementation ERP', duration: '15 min' },
+        { num: 2, title: 'Les 15 types d\'ERP (J à Y)', duration: '20 min' },
+        { num: 3, title: 'Les 5 catégories selon l\'effectif', duration: '15 min' },
+        { num: 4, title: 'Tableau de synthèse et exemples pratiques', duration: '10 min' },
+      ]
+    },
+  };
+
+  // ── Ouvrir modal ──
+  function openModal(courseId) {
+    const data = coursData[courseId];
+    if (!data) return;
+    document.getElementById('modalTitle').textContent = data.title;
+    document.getElementById('modalSubtitle').textContent = data.cat + ' · ' + data.modules.length + ' modules';
+    const bodyEl = document.getElementById('modalBody');
+    bodyEl.innerHTML = `
+      <p style="color:#6c7a89; font-size:.88rem; margin-bottom:20px;">
+        Cliquez sur un module pour accéder à son contenu pédagogique.
+        Les modules sont progressifs — commencez par le premier.
+      </p>
+      <ul class="module-list" aria-label="Modules du cours">
+        ${data.modules.map(m => `
+          <li onclick="selectModule('${courseId}', ${m.num})" role="button" tabindex="0"
+              onkeypress="if(event.key==='Enter') selectModule('${courseId}', ${m.num})">
+            <span class="module-num">${m.num}</span>
+            <span>${m.title}</span>
+            <span class="module-duration">⏱ ${m.duration}</span>
+          </li>
+        `).join('')}
+      </ul>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="exercices.html" class="btn btn--primary" style="font-size:.85rem; padding:10px 22px;">
+          &#x1F3AF; S'entraîner sur ce cours
+        </a>
+        <a href="index.html#contact" style="display:inline-flex; align-items:center; gap:6px; color:#C0392B; font-size:.85rem; font-weight:600; text-decoration:none;">
+          &#x1F4E5; Télécharger la fiche PDF
+        </a>
+      </div>
+    `;
+    document.getElementById('modalOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function selectModule(courseId, moduleNum) {
+    alert('Module ' + moduleNum + ' sélectionné.\n\nLe contenu détaillé de chaque module sera disponible dans l\'espace membre.\n\nContactez-nous pour accéder aux cours complets.');
+  }
+
+  document.getElementById('modalOverlay').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('modalOverlay')) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // ── Filtres ──
+  document.querySelectorAll('.filter-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const cat = tab.dataset.cat;
+      let count = 0;
+      document.querySelectorAll('.cours-card').forEach(card => {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.classList.remove('hidden');
+          count++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+      document.getElementById('coursCount').textContent =
+        count + ' module' + (count > 1 ? 's' : '') + (cat === 'all' ? ' disponibles' : ' — ' + tab.textContent.replace(/[&#x1F534;&#x1F7E0;&#x1F535;&#x1F7E2;&#x1F7E3;&#x1F537;]/u, '').trim()) + ' · mis à jour en 2026';
+    });
+  });
+
+  // ── Recherche ──
+  document.getElementById('courseSearch').addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    document.querySelectorAll('.cours-card').forEach(card => {
+      const text = card.textContent.toLowerCase();
+      card.classList.toggle('hidden', query.length > 1 && !text.includes(query));
+    });
+  });
+
+  // ── URL params (cat=...) ──
+  const urlParams = new URLSearchParams(window.location.search);
+  const catParam = urlParams.get('cat');
+  if (catParam) {
+    const matchTab = document.querySelector(`.filter-tab[data-cat="${catParam}"]`);
+    if (matchTab) matchTab.click();
+  }
+  </script>
+  <script src="js/popup.js" defer></script>
+  <script src="js/chatbot.js" defer></script>
+</body>
+</html>
