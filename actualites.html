@@ -536,6 +536,30 @@
               </div>
             </article>
 
+            <!-- ══════════════════════════════════════════
+                 VEILLE AUTOMATIQUE — Cloudflare Worker
+                 ══════════════════════════════════════════ -->
+            <div id="actuVeille" style="margin-bottom:40px;">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px; flex-wrap:wrap;">
+                <h2 style="font-family:'Montserrat',sans-serif; font-size:1.1rem; font-weight:700; color:#1A2E4A; margin:0;">
+                  📡 Veille réglementaire automatique
+                </h2>
+                <span id="veilleStatus" style="font-size:.72rem; background:#f0f4f8; color:#6c7a89; border-radius:20px; padding:3px 12px; font-weight:600;">
+                  ⏳ Chargement…
+                </span>
+              </div>
+              <div id="veilleGrid" class="actu-grid"></div>
+              <p id="veilleEmpty" style="display:none; font-size:.85rem; color:#aab3be; text-align:center; padding:20px 0;">
+                Aucune nouvelle actualité trouvée pour le moment.
+              </p>
+              <p id="veilleError" style="display:none; font-size:.82rem; color:#C0392B; background:#fde8e8; border-radius:10px; text-align:center; padding:12px;">
+                ⚠️ Chargement automatique indisponible — les articles ci-dessous sont à jour.
+              </p>
+              <p id="veilleLastUpdated" style="display:none; font-size:.7rem; color:#aab3be; text-align:right; margin-top:8px;">
+                Dernière mise à jour : <span id="veilleDate"></span>
+              </p>
+            </div>
+
             <!-- Grille articles — sources vérifiées -->
             <div class="actu-grid" id="actuGrid">
 
@@ -1020,7 +1044,110 @@
   const urlParams = new URLSearchParams(window.location.search);
   const catParam = urlParams.get('cat');
   if (catParam) filterCat(catParam);
-  </script>
+
+  // ══════════════════════════════════════════════════════
+  // VEILLE AUTOMATIQUE — Cloudflare Worker
+  // ══════════════════════════════════════════════════════
+  const WORKER_URL = 'https://samincendie-actualites.sambebel75.workers.dev';
+
+  async function loadVeille() {
+    const grid   = document.getElementById('veilleGrid');
+    const status = document.getElementById('veilleStatus');
+    const empty  = document.getElementById('veilleEmpty');
+    const errEl  = document.getElementById('veilleError');
+    const meta   = document.getElementById('veilleLastUpdated');
+    const dateEl = document.getElementById('veilleDate');
+
+    try {
+      const controller = new AbortController();
+      setTimeout(() => controller.abort(), 12000);
+
+      const res  = await fetch(WORKER_URL, { signal: controller.signal });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+
+      if (!data.items || data.items.length === 0) {
+        empty.style.display = 'block';
+        status.textContent  = '0 article';
+        return;
+      }
+
+      // Afficher les 9 premiers articles
+      grid.innerHTML = data.items.slice(0, 9).map(renderVeilleCard).join('');
+
+      // Réintégrer dans le système de filtres
+      grid.querySelectorAll('.actu-card').forEach(card => {
+        card.dataset.cat = devinerCategorie(
+          (card.querySelector('.actu-card__title') || {}).textContent || ''
+        );
+      });
+
+      status.textContent      = '✅ ' + data.count + ' source' + (data.count > 1 ? 's' : '') + ' • Mis à jour';
+      status.style.background = '#e8f5e9';
+      status.style.color      = '#2e7d32';
+
+      if (data.lastUpdated) {
+        dateEl.textContent    = new Date(data.lastUpdated).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+        meta.style.display    = 'block';
+      }
+
+    } catch (err) {
+      console.warn('[Veille automatique]', err);
+      errEl.style.display     = 'block';
+      document.getElementById('actuVeille').style.marginBottom = '16px';
+      status.textContent      = '⚠️ Indisponible';
+      status.style.background = '#fde8e8';
+      status.style.color      = '#C0392B';
+    }
+  }
+
+  function renderVeilleCard(item) {
+    const icon  = item.sourceIcon || '📰';
+    const name  = escHtml(item.sourceName || 'Source');
+    const title = escHtml(item.title);
+    const sum   = item.summary ? '<p class="actu-card__excerpt">' + escHtml(item.summary) + '</p>' : '';
+    const date  = item.date
+      ? '📅 ' + new Date(item.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' })
+      : '';
+    const cat   = devinerCategorie(item.title + ' ' + (item.summary || ''));
+    const colors = { cnaps: '--cnaps', ssiap: '--ssiap', formation: '--formation', incendie: '--incendie' };
+    const cls   = 'actu-card__img' + (colors[cat] ? colors[cat] : '--reglem');
+
+    return [
+      '<article class="actu-card" data-cat="' + cat + '">',
+      '  <div class="actu-card__img ' + cls + '" aria-hidden="true" style="font-size:2rem;">' + icon + '</div>',
+      '  <div class="actu-card__body">',
+      '    <div class="actu-card__tags">',
+      '      <span class="actu-tag actu-tag--reglementation">' + name + '</span>',
+      '    </div>',
+      '    <h3 class="actu-card__title">' + title + '</h3>',
+      '    ' + sum,
+      '  </div>',
+      '  <div class="actu-card__footer">',
+      '    <div class="actu-card__date">' + date + '</div>',
+      '    <a href="' + escHtml(item.url) + '" target="_blank" rel="noopener noreferrer" class="actu-card__link">Lire →</a>',
+      '  </div>',
+      '</article>',
+    ].join('\n');
+  }
+
+  function devinerCategorie(texte) {
+    const t = texte.toLowerCase();
+    if (/cnaps|sécurité privée|aps|tfp|qualiopi/.test(t))     return 'cnaps';
+    if (/ssiap|agent de sécurité incendie/.test(t))            return 'ssiap';
+    if (/formation|certification|diplôme|mac\b/.test(t))       return 'formation';
+    if (/incendie|feu|sinistre|désenfumage|sprinkler/.test(t)) return 'incendie';
+    return 'reglementation';
+  }
+
+  function escHtml(s) {
+    return String(s || '')
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  loadVeille();
+</script>
   <script src="js/popup.js" defer></script>
   <script src="js/chatbot.js" defer></script>
 </body>
